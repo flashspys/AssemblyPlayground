@@ -30,4 +30,5 @@
     [display rand];
     
 }
+
 @end

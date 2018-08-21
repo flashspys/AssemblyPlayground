@@ -12,6 +12,13 @@
 		DC690FA72125B281002BB4E6 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA62125B281002BB4E6 /* Document.swift */; };
 		DC690FA92125B281002BB4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC690FA82125B281002BB4E6 /* Assets.xcassets */; };
 		DC690FAC2125B281002BB4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC690FAA2125B281002BB4E6 /* Main.storyboard */; };
+		DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97A212CB68300C871CC /* SourceTextView.m */; };
+		DCFED987212CB6AF00C871CC /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED978212CB67400C871CC /* Display.m */; };
+		DCFED988212CB6B100C871CC /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED976212CB67400C871CC /* DisplayViewController.m */; };
+		DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */; };
+		DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED984212CB68A00C871CC /* Unicorn.m */; };
+		DCFED98B212CB6BD00C871CC /* Keystone+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97D212CB68900C871CC /* Keystone+swift.swift */; };
+		DCFED98C212CB6BF00C871CC /* Keystone.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97F212CB68900C871CC /* Keystone.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,20 @@
 		DC690FAB2125B281002BB4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC690FAD2125B281002BB4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssemblyPlayground.entitlements; sourceTree = "<group>"; };
+		DCFED975212CB67400C871CC /* DisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		DCFED976212CB67400C871CC /* DisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		DCFED977212CB67400C871CC /* Display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		DCFED978212CB67400C871CC /* Display.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
+		DCFED97A212CB68300C871CC /* SourceTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTextView.m; sourceTree = "<group>"; };
+		DCFED97B212CB68300C871CC /* SourceTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceTextView.h; sourceTree = "<group>"; };
+		DCFED97D212CB68900C871CC /* Keystone+swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keystone+swift.swift"; sourceTree = "<group>"; };
+		DCFED97E212CB68900C871CC /* Keystone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keystone.h; sourceTree = "<group>"; };
+		DCFED97F212CB68900C871CC /* Keystone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keystone.m; sourceTree = "<group>"; };
+		DCFED981212CB68A00C871CC /* X86Registers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = X86Registers.h; sourceTree = "<group>"; };
+		DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unicorn+Swift.swift"; sourceTree = "<group>"; };
+		DCFED983212CB68A00C871CC /* Unicorn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unicorn.h; sourceTree = "<group>"; };
+		DCFED984212CB68A00C871CC /* Unicorn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unicorn.m; sourceTree = "<group>"; };
+		DCFED986212CB69400C871CC /* AssemblyPlayground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AssemblyPlayground-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,14 +77,52 @@
 			isa = PBXGroup;
 			children = (
 				DC690FA22125B281002BB4E6 /* AppDelegate.swift */,
+				DC690FAA2125B281002BB4E6 /* Main.storyboard */,
 				DC690FA42125B281002BB4E6 /* ViewController.swift */,
 				DC690FA62125B281002BB4E6 /* Document.swift */,
+				DCFED97B212CB68300C871CC /* SourceTextView.h */,
+				DCFED97A212CB68300C871CC /* SourceTextView.m */,
+				DCFED979212CB67400C871CC /* Display */,
+				DCFED985212CB68A00C871CC /* Unicorn */,
+				DCFED980212CB68900C871CC /* Keystone */,
 				DC690FA82125B281002BB4E6 /* Assets.xcassets */,
-				DC690FAA2125B281002BB4E6 /* Main.storyboard */,
 				DC690FAD2125B281002BB4E6 /* Info.plist */,
+				DCFED986212CB69400C871CC /* AssemblyPlayground-Bridging-Header.h */,
 				DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */,
 			);
 			path = AssemblyPlayground;
+			sourceTree = "<group>";
+		};
+		DCFED979212CB67400C871CC /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				DCFED975212CB67400C871CC /* DisplayViewController.h */,
+				DCFED976212CB67400C871CC /* DisplayViewController.m */,
+				DCFED977212CB67400C871CC /* Display.h */,
+				DCFED978212CB67400C871CC /* Display.m */,
+			);
+			path = Display;
+			sourceTree = "<group>";
+		};
+		DCFED980212CB68900C871CC /* Keystone */ = {
+			isa = PBXGroup;
+			children = (
+				DCFED97D212CB68900C871CC /* Keystone+swift.swift */,
+				DCFED97E212CB68900C871CC /* Keystone.h */,
+				DCFED97F212CB68900C871CC /* Keystone.m */,
+			);
+			path = Keystone;
+			sourceTree = "<group>";
+		};
+		DCFED985212CB68A00C871CC /* Unicorn */ = {
+			isa = PBXGroup;
+			children = (
+				DCFED981212CB68A00C871CC /* X86Registers.h */,
+				DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */,
+				DCFED983212CB68A00C871CC /* Unicorn.h */,
+				DCFED984212CB68A00C871CC /* Unicorn.m */,
+			);
+			path = Unicorn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFED98B212CB6BD00C871CC /* Keystone+swift.swift in Sources */,
+				DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */,
+				DCFED988212CB6B100C871CC /* DisplayViewController.m in Sources */,
+				DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */,
+				DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */,
 				DC690FA52125B281002BB4E6 /* ViewController.swift in Sources */,
 				DC690FA32125B281002BB4E6 /* AppDelegate.swift in Sources */,
 				DC690FA72125B281002BB4E6 /* Document.swift in Sources */,
+				DCFED987212CB6AF00C871CC /* Display.m in Sources */,
+				DCFED98C212CB6BF00C871CC /* Keystone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,13 +345,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZXT6586FS8;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = AssemblyPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				OTHER_LDFLAGS = (
+					"-lunicorn",
+					"-lkeystone",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AssemblyPlayground/AssemblyPlayground-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -298,13 +371,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZXT6586FS8;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = AssemblyPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				OTHER_LDFLAGS = (
+					"-lunicorn",
+					"-lkeystone",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AssemblyPlayground/AssemblyPlayground-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

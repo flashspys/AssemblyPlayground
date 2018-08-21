@@ -36,7 +36,7 @@
 		DC1AF12F211DF6CD00773207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC1AF131211DF6CD00773207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC1AF132211DF6CD00773207 /* UnicornTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnicornTest.entitlements; sourceTree = "<group>"; };
-		DC1AF138211DF6E500773207 /* UnicornTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnicornTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC1AF138211DF6E500773207 /* UnicornTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UnicornTest-Bridging-Header.h"; path = "../AssemblyPlayground/AssemblyPlayground/UnicornTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC1AF139211DF6E500773207 /* Unicorn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unicorn.h; sourceTree = "<group>"; };
 		DC1AF13A211DF6E500773207 /* Unicorn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unicorn.m; sourceTree = "<group>"; };
 		DC804BD7211E258A00AFFDE3 /* X86Registers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = X86Registers.h; sourceTree = "<group>"; };
@@ -44,8 +44,8 @@
 		DC804BDC211F0AC100AFFDE3 /* Keystone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keystone.h; sourceTree = "<group>"; };
 		DC804BDD211F0AC100AFFDE3 /* Keystone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keystone.m; sourceTree = "<group>"; };
 		DC804BDF211F0ED600AFFDE3 /* Keystone+swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keystone+swift.swift"; sourceTree = "<group>"; };
-		DC804BE9211F418400AFFDE3 /* SourceTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTextView.m; sourceTree = "<group>"; };
-		DC804BEA211F418400AFFDE3 /* SourceTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceTextView.h; sourceTree = "<group>"; };
+		DC804BE9211F418400AFFDE3 /* SourceTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SourceTextView.m; path = ../AssemblyPlayground/AssemblyPlayground/SourceTextView.m; sourceTree = "<group>"; };
+		DC804BEA211F418400AFFDE3 /* SourceTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SourceTextView.h; path = ../AssemblyPlayground/AssemblyPlayground/SourceTextView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +81,7 @@
 		DC1AF127211DF6CC00773207 /* UnicornTest */ = {
 			isa = PBXGroup;
 			children = (
-				DC1A924B2129BD4500886F3B /* DisplayViewController.h */,
-				DC1A924C2129BD4500886F3B /* DisplayViewController.m */,
-				DC1A924E2129BDB400886F3B /* Display.h */,
-				DC1A924F2129BDB400886F3B /* Display.m */,
+				DCFED974212CB66B00C871CC /* Display */,
 				DC1AF128211DF6CC00773207 /* AppDelegate.swift */,
 				DC1AF12A211DF6CC00773207 /* ViewController.swift */,
 				DC804BEA211F418400AFFDE3 /* SourceTextView.h */,
@@ -116,7 +113,8 @@
 				DC1AF139211DF6E500773207 /* Unicorn.h */,
 				DC1AF13A211DF6E500773207 /* Unicorn.m */,
 			);
-			path = Unicorn;
+			name = Unicorn;
+			path = ../AssemblyPlayground/AssemblyPlayground/Unicorn;
 			sourceTree = "<group>";
 		};
 		DC804BE2211F16E300AFFDE3 /* Keystone */ = {
@@ -126,7 +124,20 @@
 				DC804BDC211F0AC100AFFDE3 /* Keystone.h */,
 				DC804BDD211F0AC100AFFDE3 /* Keystone.m */,
 			);
-			path = Keystone;
+			name = Keystone;
+			path = ../AssemblyPlayground/AssemblyPlayground/Keystone;
+			sourceTree = "<group>";
+		};
+		DCFED974212CB66B00C871CC /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				DC1A924B2129BD4500886F3B /* DisplayViewController.h */,
+				DC1A924C2129BD4500886F3B /* DisplayViewController.m */,
+				DC1A924E2129BDB400886F3B /* Display.h */,
+				DC1A924F2129BDB400886F3B /* Display.m */,
+			);
+			name = Display;
+			path = ../AssemblyPlayground/AssemblyPlayground/Display;
 			sourceTree = "<group>";
 		};
 		E93EF6FBE01F4CD1B932846E /* Pods */ = {
@@ -387,10 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include/unicorn/,
-					/usr/local/include/,
-				);
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = UnicornTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -419,10 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				HEADER_SEARCH_PATHS = (
-					/usr/local/include/unicorn/,
-					/usr/local/include/,
-				);
+				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = UnicornTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
