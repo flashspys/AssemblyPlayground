@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class DisplayViewController: NSViewController {
+    
+    @IBOutlet var display: Display!
+
+    func setMemory(pointer: UnsafeMutablePointer<UInt8>) {
+        self.display.initMemory(pointer)
+    }
+    
+}

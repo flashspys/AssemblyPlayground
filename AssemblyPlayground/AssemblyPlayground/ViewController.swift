@@ -54,14 +54,14 @@ class ViewController: NSViewController {
         codeEditor.keywordColors = ["inc": NSColor.red]
         
         uni.delegate = self
-        let pointer = malloc(1024*1024)
-        uni.createMemory(withPointer: pointer!, size: 1024*1024)
+        let pointer = UnsafeMutablePointer<UInt8>.allocate(capacity: 1024*1024)
+        uni.createMemory(withPointer: pointer, size: 1024*1024)
         
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Display")) as! NSWindowController
         windowController.showWindow(self)
         displayWindow = windowController.contentViewController as? DisplayViewController
-        displayWindow!.setMemory(pointer!)
+        displayWindow!.setMemory(pointer: pointer)
         display = self.displayWindow!.view.subviews[0] as? Display
     }
     

@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Display : NSView
--(void)rand;
 - (void) initMemory:(Byte*) pointer;
 @end
 

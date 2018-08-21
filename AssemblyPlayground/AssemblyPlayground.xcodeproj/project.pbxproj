@@ -14,11 +14,16 @@
 		DC690FAC2125B281002BB4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC690FAA2125B281002BB4E6 /* Main.storyboard */; };
 		DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97A212CB68300C871CC /* SourceTextView.m */; };
 		DCFED987212CB6AF00C871CC /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED978212CB67400C871CC /* Display.m */; };
-		DCFED988212CB6B100C871CC /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED976212CB67400C871CC /* DisplayViewController.m */; };
 		DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */; };
 		DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED984212CB68A00C871CC /* Unicorn.m */; };
 		DCFED98B212CB6BD00C871CC /* Keystone+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97D212CB68900C871CC /* Keystone+swift.swift */; };
 		DCFED98C212CB6BF00C871CC /* Keystone.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97F212CB68900C871CC /* Keystone.m */; };
+		DCFED98E212CB9E500C871CC /* CodeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */; };
+		DCFED990212CB9F800C871CC /* DocumentSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */; };
+		DCFED992212CBA1200C871CC /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED991212CBA1200C871CC /* SplitViewController.swift */; };
+		DCFED994212CBA8800C871CC /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED993212CBA8800C871CC /* MainWindowController.swift */; };
+		DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED995212CBE3C00C871CC /* DisplayViewController.swift */; };
+		DCFED998212CC28500C871CC /* DisplayWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED997212CC28500C871CC /* DisplayWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +35,6 @@
 		DC690FAB2125B281002BB4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC690FAD2125B281002BB4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssemblyPlayground.entitlements; sourceTree = "<group>"; };
-		DCFED975212CB67400C871CC /* DisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
-		DCFED976212CB67400C871CC /* DisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		DCFED977212CB67400C871CC /* Display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		DCFED978212CB67400C871CC /* Display.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		DCFED97A212CB68300C871CC /* SourceTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTextView.m; sourceTree = "<group>"; };
@@ -44,6 +47,12 @@
 		DCFED983212CB68A00C871CC /* Unicorn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unicorn.h; sourceTree = "<group>"; };
 		DCFED984212CB68A00C871CC /* Unicorn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unicorn.m; sourceTree = "<group>"; };
 		DCFED986212CB69400C871CC /* AssemblyPlayground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AssemblyPlayground-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorViewController.swift; sourceTree = "<group>"; };
+		DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSettingsViewController.swift; sourceTree = "<group>"; };
+		DCFED991212CBA1200C871CC /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		DCFED993212CBA8800C871CC /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		DCFED995212CBE3C00C871CC /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		DCFED997212CC28500C871CC /* DisplayWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +87,11 @@
 			children = (
 				DC690FA22125B281002BB4E6 /* AppDelegate.swift */,
 				DC690FAA2125B281002BB4E6 /* Main.storyboard */,
+				DCFED993212CBA8800C871CC /* MainWindowController.swift */,
 				DC690FA42125B281002BB4E6 /* ViewController.swift */,
+				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
+				DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */,
+				DCFED991212CBA1200C871CC /* SplitViewController.swift */,
 				DC690FA62125B281002BB4E6 /* Document.swift */,
 				DCFED97B212CB68300C871CC /* SourceTextView.h */,
 				DCFED97A212CB68300C871CC /* SourceTextView.m */,
@@ -96,8 +109,8 @@
 		DCFED979212CB67400C871CC /* Display */ = {
 			isa = PBXGroup;
 			children = (
-				DCFED975212CB67400C871CC /* DisplayViewController.h */,
-				DCFED976212CB67400C871CC /* DisplayViewController.m */,
+				DCFED997212CC28500C871CC /* DisplayWindowController.swift */,
+				DCFED995212CBE3C00C871CC /* DisplayViewController.swift */,
 				DCFED977212CB67400C871CC /* Display.h */,
 				DCFED978212CB67400C871CC /* Display.m */,
 			);
@@ -197,13 +210,18 @@
 			files = (
 				DCFED98B212CB6BD00C871CC /* Keystone+swift.swift in Sources */,
 				DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */,
-				DCFED988212CB6B100C871CC /* DisplayViewController.m in Sources */,
+				DCFED98E212CB9E500C871CC /* CodeEditorViewController.swift in Sources */,
 				DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */,
 				DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */,
+				DCFED998212CC28500C871CC /* DisplayWindowController.swift in Sources */,
 				DC690FA52125B281002BB4E6 /* ViewController.swift in Sources */,
 				DC690FA32125B281002BB4E6 /* AppDelegate.swift in Sources */,
+				DCFED994212CBA8800C871CC /* MainWindowController.swift in Sources */,
 				DC690FA72125B281002BB4E6 /* Document.swift in Sources */,
+				DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */,
+				DCFED992212CBA1200C871CC /* SplitViewController.swift in Sources */,
 				DCFED987212CB6AF00C871CC /* Display.m in Sources */,
+				DCFED990212CB9F800C871CC /* DocumentSettingsViewController.swift in Sources */,
 				DCFED98C212CB6BF00C871CC /* Keystone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

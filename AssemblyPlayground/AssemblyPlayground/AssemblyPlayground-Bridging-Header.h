@@ -5,4 +5,4 @@
 #import "Unicorn.h"
 #import "Keystone.h"
 #import "SourceTextView.h"
-#import "DisplayViewController.h"
+#import "Display.h"

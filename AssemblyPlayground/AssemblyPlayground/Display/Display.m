@@ -39,14 +39,6 @@ static const size_t bufferLength = layerWidth * layerHeight * kComponentsPerPixe
     colorSpace = CGColorSpaceCreateDeviceGray();
 }
 
-- (void) rand {
-   /*for (NSInteger i = 0; i < bufferLength; ++i)
-    {
-        pointer[i] = arc4random_uniform(0xFF);
-    }
-    [self setNeedsDisplay:true];*/
-}
-
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
