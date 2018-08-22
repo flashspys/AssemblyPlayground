@@ -11,6 +11,7 @@ import AppKit
 class DisplayWindowController: NSWindowController {
     override func windowDidLoad() {
         window?.delegate = self
+        window?.level = .modalPanel
     }
 }
 
