@@ -480,12 +480,11 @@ static void _SourceColorizeCallback(NSString* source, SourceToken token, NSRange
         [scrollView setLineScroll:kLineHeight];
     }
 }
-
+/*
 - (void)insertNewline:(id)sender {
     NSString* string = [[self textStorage] mutableString];
     NSRange range = [self selectedRange];
-    
-    [self insertText:@"\n"];
+    [self insertText:@"\n" replacementRange:range];
     
     if ((range.location != NSNotFound) && (range.location > 0)) {
         NSRange subRange = [string rangeOfString:@"\n" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
@@ -500,7 +499,7 @@ static void _SourceColorizeCallback(NSString* source, SourceToken token, NSRange
         }
         [self insertText:[string substringWithRange:NSMakeRange(subRange.location, subRange2.location - subRange.location)]];
     }
-}
+}*/
 
 - (void)_highlightLine:(NSUInteger)line withColor:(NSColor*)color {
     NSString* string = [self string];
@@ -720,6 +719,10 @@ static void _SourceColorizeCallback(NSString* source, SourceToken token, NSRange
 
 - (void)shiftRight:(id)sender {
     [self _shiftRight:[NSValue valueWithRange:[self selectedRange]]];
+}
+
+-(NSTouchBar *)makeTouchBar {
+    return NULL;
 }
 
 @end

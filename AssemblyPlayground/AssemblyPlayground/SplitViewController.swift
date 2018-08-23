@@ -12,10 +12,18 @@ class SplitViewController: NSSplitViewController {
 
     weak var segmentedControl: NSSegmentedControl?
     
+    @IBOutlet weak var codeItem: NSSplitViewItem!
+    @IBOutlet weak var registerItem: NSSplitViewItem!
+    @IBOutlet weak var memoryItem: NSSplitViewItem!
+    @IBOutlet weak var settingsItem: NSSplitViewItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
+        self.codeItem.minimumThickness = 100 // Code
+        self.registerItem.minimumThickness = 243 // Registers
+        self.memoryItem.minimumThickness = 100 // Memory
+        self.settingsItem.minimumThickness = 100 // Settings
     }
     
     func setCollapsedState() {

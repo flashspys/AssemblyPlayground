@@ -78,14 +78,15 @@ void codeHook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data) {
     });
 }
 
--(void)writeCode:(uint8_t*)code length: (size_t) length{
+-(int)writeCode:(uint8_t*)code length: (size_t) length{
     // write machine code to be emulated to memory
     if (uc_mem_write(uc, memorySize-length, code, length)) {
         printf("Failed to write emulation code to memory, quit!\n");
-        return;
+        return -1;
     }
     codeLength = length;
     //[self setCodeHook];
+    return 0;
 }
 
 -(void)setRegister:(X86Register) reg toValue:(uint64_t) value {

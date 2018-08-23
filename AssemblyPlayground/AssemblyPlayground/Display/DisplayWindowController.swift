@@ -9,6 +9,13 @@
 import AppKit
 
 class DisplayWindowController: NSWindowController {
+    
+    var display: Display? {
+        get {
+            return (self.contentViewController as? DisplayViewController)?.display
+        }
+    }
+    
     override func windowDidLoad() {
         window?.delegate = self
         window?.level = .modalPanel

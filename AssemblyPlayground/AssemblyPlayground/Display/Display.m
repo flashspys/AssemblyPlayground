@@ -23,6 +23,13 @@ static const size_t bufferLength = layerWidth * layerHeight * kComponentsPerPixe
     CGColorSpaceRef colorSpace;
 }
 
+- (void)awakeFromNib {
+    [NSLayoutConstraint activateConstraints:@[
+                                              [self.widthAnchor constraintEqualToConstant:layerWidth],
+                                              [self.heightAnchor constraintEqualToConstant:layerHeight]
+                                              ]];
+}
+
 - (void) initMemory:(Byte*) pointer {
     
     // The real function does something more interesting with the buffer, but I cut it

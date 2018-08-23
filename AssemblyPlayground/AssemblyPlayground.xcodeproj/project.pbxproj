@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC690FA32125B281002BB4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA22125B281002BB4E6 /* AppDelegate.swift */; };
-		DC690FA52125B281002BB4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA42125B281002BB4E6 /* ViewController.swift */; };
 		DC690FA72125B281002BB4E6 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA62125B281002BB4E6 /* Document.swift */; };
 		DC690FA92125B281002BB4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC690FA82125B281002BB4E6 /* Assets.xcassets */; };
 		DC690FAC2125B281002BB4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC690FAA2125B281002BB4E6 /* Main.storyboard */; };
@@ -24,6 +23,10 @@
 		DCFED994212CBA8800C871CC /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED993212CBA8800C871CC /* MainWindowController.swift */; };
 		DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED995212CBE3C00C871CC /* DisplayViewController.swift */; };
 		DCFED998212CC28500C871CC /* DisplayWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED997212CC28500C871CC /* DisplayWindowController.swift */; };
+		DCFED99A212DE18500C871CC /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED999212DE18500C871CC /* RegisterTableViewController.swift */; };
+		DCFED99E212DE75D00C871CC /* InspectableRegisters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED99D212DE75D00C871CC /* InspectableRegisters.swift */; };
+		DCFED9A0212DEC2E00C871CC /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED99F212DEC2E00C871CC /* Engine.swift */; };
+		DCFED9A2212E0CDB00C871CC /* HexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED9A1212E0CDB00C871CC /* HexExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,10 @@
 		DCFED993212CBA8800C871CC /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		DCFED995212CBE3C00C871CC /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		DCFED997212CC28500C871CC /* DisplayWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWindowController.swift; sourceTree = "<group>"; };
+		DCFED999212DE18500C871CC /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
+		DCFED99D212DE75D00C871CC /* InspectableRegisters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectableRegisters.swift; sourceTree = "<group>"; };
+		DCFED99F212DEC2E00C871CC /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		DCFED9A1212E0CDB00C871CC /* HexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +95,14 @@
 				DC690FA22125B281002BB4E6 /* AppDelegate.swift */,
 				DC690FAA2125B281002BB4E6 /* Main.storyboard */,
 				DCFED993212CBA8800C871CC /* MainWindowController.swift */,
+				DCFED99F212DEC2E00C871CC /* Engine.swift */,
+				DCFED991212CBA1200C871CC /* SplitViewController.swift */,
+				DCFED999212DE18500C871CC /* RegisterTableViewController.swift */,
+				DCFED99D212DE75D00C871CC /* InspectableRegisters.swift */,
 				DC690FA42125B281002BB4E6 /* ViewController.swift */,
+				DCFED9A1212E0CDB00C871CC /* HexExtension.swift */,
 				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
 				DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */,
-				DCFED991212CBA1200C871CC /* SplitViewController.swift */,
 				DC690FA62125B281002BB4E6 /* Document.swift */,
 				DCFED97B212CB68300C871CC /* SourceTextView.h */,
 				DCFED97A212CB68300C871CC /* SourceTextView.m */,
@@ -214,11 +225,14 @@
 				DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */,
 				DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */,
 				DCFED998212CC28500C871CC /* DisplayWindowController.swift in Sources */,
-				DC690FA52125B281002BB4E6 /* ViewController.swift in Sources */,
+				DCFED9A2212E0CDB00C871CC /* HexExtension.swift in Sources */,
+				DCFED9A0212DEC2E00C871CC /* Engine.swift in Sources */,
 				DC690FA32125B281002BB4E6 /* AppDelegate.swift in Sources */,
+				DCFED99A212DE18500C871CC /* RegisterTableViewController.swift in Sources */,
 				DCFED994212CBA8800C871CC /* MainWindowController.swift in Sources */,
 				DC690FA72125B281002BB4E6 /* Document.swift in Sources */,
 				DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */,
+				DCFED99E212DE75D00C871CC /* InspectableRegisters.swift in Sources */,
 				DCFED992212CBA1200C871CC /* SplitViewController.swift in Sources */,
 				DCFED987212CB6AF00C871CC /* Display.m in Sources */,
 				DCFED990212CB9F800C871CC /* DocumentSettingsViewController.swift in Sources */,

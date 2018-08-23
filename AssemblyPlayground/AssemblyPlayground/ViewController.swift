@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-
+/*
 extension String {
     var drop0xPrefix: String {
         return hasPrefix("0x") ? String(self.dropFirst(2)) : self
@@ -108,3 +108,4 @@ extension ViewController: UnicornDelegate {
         }
     }
 }
+*/

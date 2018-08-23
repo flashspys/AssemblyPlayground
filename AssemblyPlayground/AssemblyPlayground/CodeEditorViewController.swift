@@ -12,11 +12,19 @@ class CodeEditorViewController: NSViewController {
 
     @IBOutlet var sourceTextView: SourceTextView!
     
+    var sourceCode: String {
+        get {
+            return sourceTextView.string
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sourceTextView.keywordColors = ["inc": NSColor.red]
         // Do view setup here.
     }
+    
+    
     
 }

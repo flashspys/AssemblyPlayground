@@ -9,9 +9,9 @@
 import Foundation
 
 extension Unicorn {
-    func writeCode(code: [UInt8]) {
+    func writeCode(code: [UInt8]) -> Bool {
         let pointer: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer(mutating: code)
-        self.writeCode(pointer, length: code.count)
+        return self.writeCode(pointer, length: code.count) == -1 ? false : true
     }
     
     func readMemory(addr: UInt64, size: Int) -> [UInt8] {
@@ -22,5 +22,9 @@ extension Unicorn {
     func writeMemory(address: UInt64, data: [UInt8]) {
         let pointer: UnsafeMutablePointer<UInt8> = UnsafeMutablePointer(mutating: data)
         self.writeMemory(address, data: pointer, size: data.count)
+    }
+    
+    func readRegister(_ inspectableRegister: InspectableRegisters.X86) -> UInt64 {
+        return self.read(inspectableRegister.correspondingX86Register())
     }
 }

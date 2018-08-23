@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)run;
 
 -(void)createMemoryWithPointer: (void*) pointer size: (size_t) size;
--(void)writeCode:(uint8_t*)code length: (size_t) length;
+-(int)writeCode:(uint8_t*)code length: (size_t) length;
 -(void)setRegister:(X86Register) reg toValue:(uint64_t) value;
 -(uint64_t)readRegister:(X86Register) reg;
 -(uint8_t*)readMemory:(uint64_t)addr size: (size_t)size;

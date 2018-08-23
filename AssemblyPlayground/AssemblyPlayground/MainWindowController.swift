@@ -11,14 +11,35 @@ import Cocoa
 class MainWindowController: NSWindowController {
 
     @IBOutlet weak var segmentedControl: NSSegmentedControl!
+    
+    var splitViewController: SplitViewController {
+        get {
+            return self.contentViewController as! SplitViewController
+        }
+    }
+    
     var displayWindowController: DisplayWindowController?
     
+    /// The holy Engine:
+    var engine = Engine()
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        if let splitViewController = contentViewController as? SplitViewController {
-            splitViewController.segmentedControl = segmentedControl
+        splitViewController.segmentedControl = segmentedControl
+        
+        engine.delegate = self
+    }
+    
+    @IBAction func run(_ sender: NSButton) {
+        guard let codeVC = splitViewController.codeItem.viewController as? CodeEditorViewController else { return }
+        
+        if engine.prepareCode(codeVC.sourceCode) {
+            engine.run()
         }
+    }
+    
+    @IBAction func reset(_ sender: NSButton) {
+        engine.reset()
     }
     
     @IBAction func showDisplayViewController(sender: NSButton) {
@@ -27,13 +48,11 @@ class MainWindowController: NSWindowController {
             displayWC.window?.makeKeyAndOrderFront(self)
         } else {
             displayWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("DisplayWindowController")) as? DisplayWindowController
-            
             displayWindowController?.window?.makeKeyAndOrderFront(self)
+            if let displayVC = displayWindowController?.contentViewController as? DisplayViewController {
+                displayVC.setMemory(pointer: engine.memory)
+            }
         }
-        /*
-        displayWindow = windowController.contentViewController as? DisplayViewController
-        displayWindow!.setMemory(pointer!)
-        display = self.displayWindow!.view.subviews[0] as? Display*/
     }
     
     @IBAction func segmentedControlChanged(_ sender: NSSegmentedControl) {
@@ -41,4 +60,18 @@ class MainWindowController: NSWindowController {
             splitViewController.setCollapsedState()
         }
     }
+    
+}
+
+extension MainWindowController: EngineDelegate {
+    
+    func executionFinished() {
+        if let displayWindowController = self.displayWindowController {
+            DispatchQueue.main.async {
+                displayWindowController.display?.setNeedsDisplay(displayWindowController.display!.bounds)
+            }
+        }
+        (self.splitViewController.registerItem.viewController as? RegisterTableViewController)?.updateRegisters()
+    }
+    
 }
