@@ -32,7 +32,6 @@
 /* Begin PBXFileReference section */
 		DC690F9F2125B281002BB4E6 /* AssemblyPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssemblyPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC690FA22125B281002BB4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC690FA42125B281002BB4E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC690FA62125B281002BB4E6 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		DC690FA82125B281002BB4E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC690FAB2125B281002BB4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 				DCFED991212CBA1200C871CC /* SplitViewController.swift */,
 				DCFED999212DE18500C871CC /* RegisterTableViewController.swift */,
 				DCFED99D212DE75D00C871CC /* InspectableRegisters.swift */,
-				DC690FA42125B281002BB4E6 /* ViewController.swift */,
 				DCFED9A1212E0CDB00C871CC /* HexExtension.swift */,
 				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
 				DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */,
