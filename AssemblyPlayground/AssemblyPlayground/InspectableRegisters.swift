@@ -12,7 +12,15 @@ import Foundation
 struct InspectableRegisters {
     
     enum X86: String, CaseIterable {
-        case RAX, RBX, RCX, RDX, RSI, RDI, RIP
+        case RAX, RBX, RCX, RDX, RSI, RDI, RIP, RSP, RBP,
+        R8,
+        R9,
+        R10,
+        R11,
+        R12,
+        R13,
+        R14,
+        R15
         
         func correspondingX86Register() -> X86Register {
             switch self {
@@ -30,6 +38,26 @@ struct InspectableRegisters {
                 return .RDI
             case .RIP:
                 return .RIP
+            case .RSP:
+                return .RSP
+            case .RBP:
+                return .RBP
+            case .R8:
+                return .R8
+            case .R9:
+                return .R9
+            case .R10:
+                return .R10
+            case .R11:
+                return .R11
+            case .R12:
+                return .R12
+            case .R13:
+                return .R13
+            case .R14:
+                return .R14
+            case .R15:
+                return .R15
             }
         }
     }

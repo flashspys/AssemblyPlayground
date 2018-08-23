@@ -15,7 +15,7 @@
 		DCFED987212CB6AF00C871CC /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED978212CB67400C871CC /* Display.m */; };
 		DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */; };
 		DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED984212CB68A00C871CC /* Unicorn.m */; };
-		DCFED98B212CB6BD00C871CC /* Keystone+swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97D212CB68900C871CC /* Keystone+swift.swift */; };
+		DCFED98B212CB6BD00C871CC /* Keystone+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97D212CB68900C871CC /* Keystone+Swift.swift */; };
 		DCFED98C212CB6BF00C871CC /* Keystone.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97F212CB68900C871CC /* Keystone.m */; };
 		DCFED98E212CB9E500C871CC /* CodeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */; };
 		DCFED990212CB9F800C871CC /* DocumentSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */; };
@@ -42,7 +42,7 @@
 		DCFED978212CB67400C871CC /* Display.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		DCFED97A212CB68300C871CC /* SourceTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTextView.m; sourceTree = "<group>"; };
 		DCFED97B212CB68300C871CC /* SourceTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceTextView.h; sourceTree = "<group>"; };
-		DCFED97D212CB68900C871CC /* Keystone+swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keystone+swift.swift"; sourceTree = "<group>"; };
+		DCFED97D212CB68900C871CC /* Keystone+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keystone+Swift.swift"; sourceTree = "<group>"; };
 		DCFED97E212CB68900C871CC /* Keystone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keystone.h; sourceTree = "<group>"; };
 		DCFED97F212CB68900C871CC /* Keystone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Keystone.m; sourceTree = "<group>"; };
 		DCFED981212CB68A00C871CC /* X86Registers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = X86Registers.h; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		DCFED980212CB68900C871CC /* Keystone */ = {
 			isa = PBXGroup;
 			children = (
-				DCFED97D212CB68900C871CC /* Keystone+swift.swift */,
+				DCFED97D212CB68900C871CC /* Keystone+Swift.swift */,
 				DCFED97E212CB68900C871CC /* Keystone.h */,
 				DCFED97F212CB68900C871CC /* Keystone.m */,
 			);
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCFED98B212CB6BD00C871CC /* Keystone+swift.swift in Sources */,
+				DCFED98B212CB6BD00C871CC /* Keystone+Swift.swift in Sources */,
 				DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */,
 				DCFED98E212CB9E500C871CC /* CodeEditorViewController.swift in Sources */,
 				DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */,
@@ -387,6 +387,7 @@
 				OTHER_LDFLAGS = (
 					"-lunicorn",
 					"-lkeystone",
+					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +414,7 @@
 				OTHER_LDFLAGS = (
 					"-lunicorn",
 					"-lkeystone",
+					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
