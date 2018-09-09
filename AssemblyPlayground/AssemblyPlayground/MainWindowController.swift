@@ -26,14 +26,14 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         splitViewController.segmentedControl = segmentedControl
-        
         engine.delegate = self
+        
     }
     
     @IBAction func run(_ sender: NSButton) {
         guard let codeVC = splitViewController.codeItem.viewController as? CodeEditorViewController else { return }
         
-        if engine.prepareCode(codeVC.sourceCode) {
+        if engine.prepareCode(codeVC.assembly) {
             engine.run()
         }
     }

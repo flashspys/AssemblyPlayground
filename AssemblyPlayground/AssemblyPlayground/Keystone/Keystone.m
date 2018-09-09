@@ -13,7 +13,7 @@
     ks_engine* ks;
 }
 
--(uint8_t*)assemble: (NSString*) string size: (size_t*) size {
+-(nullable uint8_t*)assemble: (NSString*) string size: (size_t*) size {
     ks_err err;
     uint8_t *encode;
     int* infoArray;
@@ -28,25 +28,27 @@
     
     ks_option(ks, KS_OPT_SYNTAX, KS_OPT_SYNTAX_NASM);
     
-    if (ks_asm_felix(ks, code, 0, &encode, size, &infoArray, &infoSize) != KS_ERR_OK) {
-        printf("Error #%i parsing: %s =>  %s",ks_errno(ks), code, ks_strerror(ks_errno(ks)));
+    int result = ks_asm_felix(ks, code, 0, &encode, size, &infoArray, &infoSize);
+    
+    
+    uint8_t* assembly = malloc(*size);
+    memcpy(assembly, encode, *size);
+    
+    for (int i = 0; i < infoSize; i++) {
+        NSLog(@"infoArray[%d] = %d", i, infoArray[i]);
+    }
+    ks_free((unsigned char *)infoArray);
+    
+    if (result != KS_ERR_OK) {
+        printf("Error #%i parsing: %s =>  %s\n",ks_errno(ks), code, ks_strerror(ks_errno(ks)));
         return NULL;
     } else {
-        uint8_t* assembly = malloc(*size);
-        memcpy(assembly, encode, *size);
-        
-        
-        
-        for (int i = 0; i < infoSize; i++) {
-            NSLog(@"infoArray[%d] = %d", i, infoArray[i]);
-        }
         
         // NOTE: free encode after usage to avoid leaking memory
         ks_free(encode);
-        ks_free((unsigned char *)infoArray);
         return assembly;
     }
-    return nil;
+    return NULL;
 }
 
 - (void)dealloc

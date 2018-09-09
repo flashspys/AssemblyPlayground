@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC3B5E2721432CC800447278 /* DocumentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B5E2621432CC800447278 /* DocumentData.swift */; };
 		DC690FA32125B281002BB4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA22125B281002BB4E6 /* AppDelegate.swift */; };
 		DC690FA72125B281002BB4E6 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA62125B281002BB4E6 /* Document.swift */; };
 		DC690FA92125B281002BB4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC690FA82125B281002BB4E6 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC3B5E2621432CC800447278 /* DocumentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentData.swift; sourceTree = "<group>"; };
 		DC690F9F2125B281002BB4E6 /* AssemblyPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssemblyPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC690FA22125B281002BB4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC690FA62125B281002BB4E6 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				DCFED9A1212E0CDB00C871CC /* HexExtension.swift */,
 				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
 				DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */,
+				DC3B5E2621432CC800447278 /* DocumentData.swift */,
 				DC690FA62125B281002BB4E6 /* Document.swift */,
 				DCFED97B212CB68300C871CC /* SourceTextView.h */,
 				DCFED97A212CB68300C871CC /* SourceTextView.m */,
@@ -179,6 +182,11 @@
 				TargetAttributes = {
 					DC690F9E2125B281002BB4E6 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -221,6 +229,7 @@
 				DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */,
 				DCFED98E212CB9E500C871CC /* CodeEditorViewController.swift in Sources */,
 				DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */,
+				DC3B5E2721432CC800447278 /* DocumentData.swift in Sources */,
 				DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */,
 				DCFED998212CC28500C871CC /* DisplayWindowController.swift in Sources */,
 				DCFED9A2212E0CDB00C871CC /* HexExtension.swift in Sources */,
@@ -371,7 +380,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AssemblyPlayground/AssemblyPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZXT6586FS8;
@@ -398,7 +406,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AssemblyPlayground/AssemblyPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZXT6586FS8;

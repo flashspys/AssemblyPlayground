@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EngineDelegate {
+protocol EngineDelegate: class {
     func executionFinished()
 }
 
@@ -17,7 +17,7 @@ class Engine: NSObject {
     private var keystone = Keystone()
     var unicorn = Unicorn()
     
-    var delegate: EngineDelegate?
+    weak var delegate: EngineDelegate?
     
     var memory: UnsafeMutablePointer<Byte>
     
@@ -29,8 +29,11 @@ class Engine: NSObject {
     }
     
     func prepareCode(_ sourceCode: String) -> Bool {
-        let opcode = keystone.assemble(string: sourceCode)
-        return unicorn.writeCode(code: opcode)
+        if let opcode = keystone.assemble(string: sourceCode) {
+            return unicorn.writeCode(code: opcode)
+        } else {
+            return false
+        }
     }
     
     func run() {

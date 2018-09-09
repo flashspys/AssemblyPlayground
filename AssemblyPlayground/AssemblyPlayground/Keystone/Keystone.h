@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Keystone : NSObject
--(uint8_t*)assemble: (NSString*) string size: (size_t*) size;
+-(nullable uint8_t*)assemble: (NSString*) string size: (size_t*) size;
 @end
 
 NS_ASSUME_NONNULL_END

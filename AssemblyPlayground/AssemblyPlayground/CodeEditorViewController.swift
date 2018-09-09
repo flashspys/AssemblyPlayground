@@ -12,19 +12,31 @@ class CodeEditorViewController: NSViewController {
 
     @IBOutlet var sourceTextView: SourceTextView!
     
-    var sourceCode: String {
-        get {
-            return sourceTextView.string
+    var assembly: String {
+        return attributedSourceCode.string
+    }
+    
+    @objc var attributedSourceCode: NSAttributedString = NSAttributedString(string: "") {
+        didSet {
+            (NSDocumentController.shared.currentDocument as? Document)?.data.assembly = self.assembly
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let assembly = (NSDocumentController.shared.documents.last as? Document)?.data.assembly {
+            self.setValue(NSAttributedString(string: assembly), forKey: "attributedSourceCode")
+        }
         sourceTextView.keywordColors = ["inc": NSColor.red]
-        // Do view setup here.
+
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+    }
     
+    override func viewDidAppear() {
+        
+    }
     
 }
