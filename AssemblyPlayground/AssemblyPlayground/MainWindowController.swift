@@ -72,6 +72,7 @@ extension MainWindowController: EngineDelegate {
             }
         }
         (self.splitViewController.registerItem.viewController as? RegisterTableViewController)?.updateRegisters()
+        (self.splitViewController.memoryItem.viewController as? MemoryViewController)?.updateMemory()
     }
     
 }

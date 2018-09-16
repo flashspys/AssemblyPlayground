@@ -14,18 +14,23 @@ protocol EngineDelegate: class {
 
 class Engine: NSObject {
     
+    static var current: Engine? {
+        return (NSApp.mainWindow?.windowController as? MainWindowController)?.engine
+    }
+    
     private var keystone = Keystone()
     var unicorn = Unicorn()
     
     weak var delegate: EngineDelegate?
     
     var memory: UnsafeMutablePointer<Byte>
+    let memorySize = 1024 * 1024
     
     override init() {
-        memory = UnsafeMutablePointer<Byte>.allocate(capacity: 1024*1024)
+        memory = UnsafeMutablePointer<Byte>.allocate(capacity: memorySize)
         super.init()
         unicorn.delegate = self
-        unicorn.createMemory(withPointer: memory, size: 1024*1024)
+        unicorn.createMemory(withPointer: memory, size: memorySize)
     }
     
     func prepareCode(_ sourceCode: String) -> Bool {

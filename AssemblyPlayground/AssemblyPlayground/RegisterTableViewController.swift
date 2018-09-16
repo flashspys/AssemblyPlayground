@@ -30,7 +30,7 @@ extension RegisterTableViewController: NSTableViewDelegate, NSTableViewDataSourc
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        if let engine = (NSApp.mainWindow?.windowController as? MainWindowController)?.engine {
+        if let engine = Engine.current {
         
             if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "Register") {
                 let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "RegisterCell"), owner: nil) as? NSTableCellView
