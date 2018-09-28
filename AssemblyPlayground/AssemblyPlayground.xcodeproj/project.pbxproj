@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		DC3B5E2621432CC800447278 /* DocumentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentData.swift; sourceTree = "<group>"; };
+		DC62BAA4215EC7500008E46E /* EmulationMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmulationMode.h; sourceTree = "<group>"; };
 		DC690F9F2125B281002BB4E6 /* AssemblyPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssemblyPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC690FA22125B281002BB4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC690FA62125B281002BB4E6 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 				DC690FA62125B281002BB4E6 /* Document.swift */,
 				DCFED97B212CB68300C871CC /* SourceTextView.h */,
 				DCFED97A212CB68300C871CC /* SourceTextView.m */,
+				DC62BAA4215EC7500008E46E /* EmulationMode.h */,
 				DCFED979212CB67400C871CC /* Display */,
 				DCFED985212CB68A00C871CC /* Unicorn */,
 				DCFED980212CB68900C871CC /* Keystone */,

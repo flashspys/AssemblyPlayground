@@ -9,9 +9,9 @@
 import Foundation
 
 extension Keystone {
-    func assemble(string: String) -> [UInt8]? {
+    func assemble(string: String, emulationMode: EmulationMode) -> [UInt8]? {
         var size: Int = 0
-        if let pointer = self.assemble(string, size: &size) {
+        if let pointer = self.assemble(string, size: &size, emulationMode: emulationMode) {
             return Array(UnsafeBufferPointer(start: pointer, count: size))
         }
         return nil

@@ -13,16 +13,24 @@
     ks_engine* ks;
 }
 
--(nullable uint8_t*)assemble: (NSString*) string size: (size_t*) size {
+-(nullable uint8_t*)assemble: (NSString*) string
+                        size: (size_t*) size
+               emulationMode: (EmulationMode) emulationMode {
     ks_err err;
     uint8_t *encode;
     int* infoArray;
     size_t infoSize;
     const char* code = [string cStringUsingEncoding:NSASCIIStringEncoding];
-    
-    err = ks_open(KS_ARCH_X86, KS_MODE_64, &ks);
+    switch (emulationMode) {
+        case x86:
+            err = ks_open(KS_ARCH_X86, KS_MODE_64, &ks);
+            break;
+        case arm64:
+            err = ks_open(KS_ARCH_ARM64, KS_MODE_LITTLE_ENDIAN, &ks);
+            break;
+    }
     if (err != KS_ERR_OK) {
-        printf("ERROR: failed on ks_open(), quit\n");
+        printf("ERROR: failed on ks_open() = %d\n", err);
         return NULL;
     }
     

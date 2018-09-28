@@ -21,7 +21,7 @@ class MainWindowController: NSWindowController {
     var displayWindowController: DisplayWindowController?
     
     /// The holy Engine:
-    var engine = Engine()
+    var engine = Engine(emulationMode: .arm64)
     
     override func windowDidLoad() {
         super.windowDidLoad()

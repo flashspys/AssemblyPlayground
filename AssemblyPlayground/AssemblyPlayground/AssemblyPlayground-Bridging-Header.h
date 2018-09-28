@@ -6,3 +6,4 @@
 #import "Keystone.h"
 #import "SourceTextView.h"
 #import "Display.h"
+#import "EmulationMode.h"

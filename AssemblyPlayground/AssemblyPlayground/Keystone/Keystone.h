@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EmulationMode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Keystone : NSObject
--(nullable uint8_t*)assemble: (NSString*) string size: (size_t*) size;
+-(nullable uint8_t*)assemble: (NSString*) string
+                        size: (size_t*) size
+               emulationMode: (EmulationMode) emulationMode;
 @end
 
 NS_ASSUME_NONNULL_END

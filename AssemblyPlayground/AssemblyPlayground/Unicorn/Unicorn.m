@@ -6,7 +6,8 @@
 //  Copyright © 2018 Felix Wehnert. All rights reserved.
 //
 
-#include <unicorn/unicorn.h>
+#import <unicorn/unicorn.h>
+#import "AssemblyPlayground-Swift.h"
 #import "Unicorn.h"
 
 void memoryHook(uc_engine *uc, uc_mem_type type, uint64_t address, int size, int64_t value, void *user_data) {
@@ -42,18 +43,28 @@ void codeHook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data) {
     return [NSString stringWithFormat:@"%i.%i", major, minor];
 }
 
--(instancetype)init
+-(instancetype)initWithEmulationMode:(EmulationMode) emulationMode
 {
     self = [super init];
     if (self) {
-        [self createEngine];
+        memoryInvalidHookID = 0;
+        memoryWriteHookID = 0;
+        [self createEngineWithEmulationMode:emulationMode];
         [self setMemoryWriteHook];
     }
     return self;
 }
 
--(void)createEngine {
-    uc_err err = uc_open(UC_ARCH_X86, UC_MODE_64, &uc);
+-(void)createEngineWithEmulationMode:(EmulationMode) emulationMode {
+    uc_err err;
+    switch (emulationMode) {
+        case x86:
+            err = uc_open(UC_ARCH_X86, UC_MODE_64, &uc);
+            break;
+        case arm64:
+            err = uc_open(UC_ARCH_ARM64, UC_MODE_ARM, &uc);
+            break;
+    }
     if (err != UC_ERR_OK) {
         printf("Failed on uc_open() with error returned: %u\n", err);
         return;
@@ -110,8 +121,10 @@ void codeHook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data) {
 }
 
 -(void)setMemoryWriteHook {
-    uc_hook_del(uc, memoryWriteHookID);
-    uc_hook_del(uc, memoryInvalidHookID);
+    if(memoryWriteHookID != 0)
+        uc_hook_del(uc, memoryWriteHookID);
+    if(memoryInvalidHookID != 0)
+        uc_hook_del(uc, memoryInvalidHookID);
     uc_hook_add(uc, &memoryWriteHookID, UC_HOOK_MEM_WRITE, memoryHook, (__bridge void *)(self), 1, 0);
     uc_hook_add(uc, &memoryInvalidHookID, UC_HOOK_MEM_INVALID, invalidMemoryHook, (__bridge void *)(self), 1, 0);
 }

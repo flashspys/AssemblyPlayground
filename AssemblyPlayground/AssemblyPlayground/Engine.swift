@@ -19,14 +19,17 @@ class Engine: NSObject {
     }
     
     private var keystone = Keystone()
-    var unicorn = Unicorn()
+    var unicorn: Unicorn
+    var emulationMode: EmulationMode
     
     weak var delegate: EngineDelegate?
     
     var memory: UnsafeMutablePointer<Byte>
     let memorySize = 1024 * 1024
     
-    override init() {
+    init(emulationMode: EmulationMode) {
+        self.emulationMode = emulationMode
+        unicorn = Unicorn(emulationMode: emulationMode)
         memory = UnsafeMutablePointer<Byte>.allocate(capacity: memorySize)
         super.init()
         unicorn.delegate = self
@@ -34,7 +37,7 @@ class Engine: NSObject {
     }
     
     func prepareCode(_ sourceCode: String) -> Bool {
-        if let opcode = keystone.assemble(string: sourceCode) {
+        if let opcode = keystone.assemble(string: sourceCode, emulationMode: emulationMode) {
             return unicorn.writeCode(code: opcode)
         } else {
             return false

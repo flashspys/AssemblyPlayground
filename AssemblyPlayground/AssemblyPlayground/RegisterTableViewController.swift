@@ -50,7 +50,15 @@ extension RegisterTableViewController: NSTableViewDelegate, NSTableViewDataSourc
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return InspectableRegisters.X86.allCases.count
+        if let emulationMode = Engine.current?.emulationMode {
+            switch emulationMode {
+            case .x86:
+                return InspectableRegisters.X86.allCases.count
+            case .arm64:
+                return InspectableRegisters.ARM64.allCases.count
+            }
+        }
+        return 0
     }
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {

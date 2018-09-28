@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "X86Registers.h"
+#import "X86Registers.h"
+#import "EmulationMode.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
 @protocol UnicornDelegate <NSObject>
 
 -(void)memoryWriteTo: (int64_t)address value: (int64_t)value size: (size_t)size;
@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak) id<UnicornDelegate> delegate;
 
 + (NSString*) versionString;
+
+-(instancetype)initWithEmulationMode:(EmulationMode) emulationMode;
 
 -(void)run;
 
