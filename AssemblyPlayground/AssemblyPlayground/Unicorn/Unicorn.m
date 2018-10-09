@@ -43,7 +43,7 @@ void codeHook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data) {
     return [NSString stringWithFormat:@"%i.%i", major, minor];
 }
 
--(instancetype)initWithEmulationMode:(EmulationMode) emulationMode
+-(instancetype)initWithEmulationMode:(int) emulationMode
 {
     self = [super init];
     if (self) {
@@ -55,15 +55,18 @@ void codeHook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data) {
     return self;
 }
 
--(void)createEngineWithEmulationMode:(EmulationMode) emulationMode {
+-(void)createEngineWithEmulationMode:(int) emulationMode {
     uc_err err;
     switch (emulationMode) {
-        case x86:
+        case 0: // x86
             err = uc_open(UC_ARCH_X86, UC_MODE_64, &uc);
             break;
-        case arm64:
+        case 1: // arm64
             err = uc_open(UC_ARCH_ARM64, UC_MODE_ARM, &uc);
             break;
+        default:
+            printf("ERROR: Unexpected emulationMode");
+            return;
     }
     if (err != UC_ERR_OK) {
         printf("Failed on uc_open() with error returned: %u\n", err);
@@ -100,11 +103,11 @@ void codeHook(uc_engine *uc, uint64_t address, uint32_t size, void *user_data) {
     return 0;
 }
 
--(void)setRegister:(X86Register) reg toValue:(uint64_t) value {
+-(void)setRegister:(int) reg toValue:(uint64_t) value {
     uc_reg_write(uc, reg, &value);
 }
 
--(uint64_t)readRegister:(X86Register) reg {
+-(uint64_t)readRegister:(int) reg {
     uint64_t value = 0; // Int is not large enough for some registers
     uc_reg_read(uc, reg, &value);
     return value;

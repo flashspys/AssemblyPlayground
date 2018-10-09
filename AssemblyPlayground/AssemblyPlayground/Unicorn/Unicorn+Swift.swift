@@ -24,7 +24,7 @@ extension Unicorn {
         self.writeMemory(address, data: pointer, size: data.count)
     }
     
-    func readRegister(_ inspectableRegister: InspectableRegisters.X86) -> UInt64 {
-        return self.read(inspectableRegister.correspondingX86Register())
+    func read(register inspectableRegister: InspectableRegister) -> UInt64 {
+        return self.readRegister(inspectableRegister.rawValue)
     }
 }

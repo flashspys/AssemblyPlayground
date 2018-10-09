@@ -25,11 +25,11 @@ class Engine: NSObject {
     weak var delegate: EngineDelegate?
     
     var memory: UnsafeMutablePointer<Byte>
-    let memorySize = 1024 * 1024
+    let memorySize = 1024 * 1024 // = 1 MB
     
     init(emulationMode: EmulationMode) {
         self.emulationMode = emulationMode
-        unicorn = Unicorn(emulationMode: emulationMode)
+        unicorn = Unicorn(emulationMode: emulationMode.rawValue)
         memory = UnsafeMutablePointer<Byte>.allocate(capacity: memorySize)
         super.init()
         unicorn.delegate = self

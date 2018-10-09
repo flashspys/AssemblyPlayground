@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "X86Registers.h"
-#import "EmulationMode.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol UnicornDelegate <NSObject>
@@ -25,14 +23,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString*) versionString;
 
--(instancetype)initWithEmulationMode:(EmulationMode) emulationMode;
+-(instancetype)initWithEmulationMode:(int) emulationMode;
 
 -(void)run;
 
 -(void)createMemoryWithPointer: (void*) pointer size: (size_t) size;
 -(int)writeCode:(uint8_t*)code length: (size_t) length;
--(void)setRegister:(X86Register) reg toValue:(uint64_t) value;
--(uint64_t)readRegister:(X86Register) reg;
+-(void)setRegister:(int) reg toValue:(uint64_t) value;
+-(uint64_t)readRegister:(int) reg;
 -(uint8_t*)readMemory:(uint64_t)addr size: (size_t)size;
 -(void)writeMemory:(uint64_t)address data:(uint8_t*)bytes size:(size_t)size;
 

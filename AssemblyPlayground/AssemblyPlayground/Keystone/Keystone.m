@@ -15,19 +15,23 @@
 
 -(nullable uint8_t*)assemble: (NSString*) string
                         size: (size_t*) size
-               emulationMode: (EmulationMode) emulationMode {
+               emulationMode: (int) emulationMode {
     ks_err err;
     uint8_t *encode;
     int* infoArray;
     size_t infoSize;
     const char* code = [string cStringUsingEncoding:NSASCIIStringEncoding];
     switch (emulationMode) {
-        case x86:
+        case 0: // x86
             err = ks_open(KS_ARCH_X86, KS_MODE_64, &ks);
             break;
-        case arm64:
+        case 1: // arm64
             err = ks_open(KS_ARCH_ARM64, KS_MODE_LITTLE_ENDIAN, &ks);
             break;
+        default:
+            printf("ERROR: Unexpected emulationMode");
+            return NULL;
+
     }
     if (err != KS_ERR_OK) {
         printf("ERROR: failed on ks_open() = %d\n", err);

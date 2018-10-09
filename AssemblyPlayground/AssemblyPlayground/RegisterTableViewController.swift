@@ -34,12 +34,12 @@ extension RegisterTableViewController: NSTableViewDelegate, NSTableViewDataSourc
         
             if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "Register") {
                 let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "RegisterCell"), owner: nil) as? NSTableCellView
-                cell?.textField?.stringValue = InspectableRegisters.X86.allCases[row].rawValue
+                cell?.textField?.stringValue = engine.emulationMode.inspectableRegisters()[row].description
                 cell?.textField?.font = NSFont(name: "Fira Code", size: 13)
                 return cell
             } else if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "Value") {
                 let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ValueCell"), owner: nil) as? NSTableCellView
-                cell?.textField?.stringValue = engine.unicorn.readRegister(InspectableRegisters.X86.allCases[row]).hexStr(min: 16)
+                cell?.textField?.stringValue = engine.emulationMode.inspectableRegisters()[row].value(with: engine).hexStr(min: 16)
                 cell?.textField?.isEditable = true
                 cell?.textField?.font = NSFont(name: "Fira Code", size: 13)
                 return cell
@@ -50,15 +50,7 @@ extension RegisterTableViewController: NSTableViewDelegate, NSTableViewDataSourc
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        if let emulationMode = Engine.current?.emulationMode {
-            switch emulationMode {
-            case .x86:
-                return InspectableRegisters.X86.allCases.count
-            case .arm64:
-                return InspectableRegisters.ARM64.allCases.count
-            }
-        }
-        return 0
+        return Engine.current?.emulationMode.inspectableRegisters().count ?? 0
     }
     
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
