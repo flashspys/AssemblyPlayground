@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EmulationMode: Int32 {
+enum EmulationMode: Int32, Codable {
     
     case x86, arm64 //, arm32, arm32thumb
     

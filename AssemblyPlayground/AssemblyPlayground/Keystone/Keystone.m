@@ -20,7 +20,11 @@
     uint8_t *encode;
     int* infoArray;
     size_t infoSize;
-    const char* code = [string cStringUsingEncoding:NSASCIIStringEncoding];
+    
+    char* code = calloc(string.length + 1, sizeof(char));
+    
+    const char* localcode = [string cStringUsingEncoding:NSASCIIStringEncoding];
+    strcpy(code, localcode);
     switch (emulationMode) {
         case 0: // x86
             err = ks_open(KS_ARCH_X86, KS_MODE_64, &ks);
@@ -53,11 +57,13 @@
     
     if (result != KS_ERR_OK) {
         printf("Error #%i parsing: %s =>  %s\n",ks_errno(ks), code, ks_strerror(ks_errno(ks)));
+        free(code);
         return NULL;
     } else {
         
         // NOTE: free encode after usage to avoid leaking memory
         ks_free(encode);
+        free(code);
         return assembly;
     }
     return NULL;

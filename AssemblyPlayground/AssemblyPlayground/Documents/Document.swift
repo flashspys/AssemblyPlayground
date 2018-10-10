@@ -11,6 +11,7 @@ import Cocoa
 class Document: NSDocument {
 
     var data: DocumentData = DocumentData()
+    weak var mainWindowController: MainWindowController?
     
     static var current: Document? {
         return (NSApp.mainWindow?.windowController as? MainWindowController)?.document as? Document
@@ -28,8 +29,17 @@ class Document: NSDocument {
     override func makeWindowControllers() {
         // Returns the Storyboard that contains your Document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let windowController = storyboard.instantiateInitialController() as! NSWindowController
-        self.addWindowController(windowController)
+        guard let mainWindowController = storyboard.instantiateController(withIdentifier: "DocumentWindowController") as? MainWindowController else {
+            fatalError("Wrong MainWindowController")
+        }
+        self.mainWindowController = mainWindowController
+        self.addWindowController(mainWindowController)
+        mainWindowController.setupEngine(emulationMode: self.data.emulationMode)
+    }
+    
+    func changeEmulationMode(to emulationMode: EmulationMode) {
+        self.data.emulationMode = emulationMode
+        self.mainWindowController?.setupEngine(emulationMode: emulationMode)
     }
 
     override func data(ofType typeName: String) throws -> Data {

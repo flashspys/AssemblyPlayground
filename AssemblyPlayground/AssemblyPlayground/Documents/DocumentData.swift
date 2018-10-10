@@ -11,5 +11,5 @@ import Foundation
 class DocumentData : Codable {
     
     var assembly = ""
-    
+    var emulationMode: EmulationMode = .x86
 }

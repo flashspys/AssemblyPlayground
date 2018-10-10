@@ -18,13 +18,13 @@ class Engine: NSObject {
         return (NSApp.mainWindow?.windowController as? MainWindowController)?.engine
     }
     
-    private var keystone = Keystone()
-    var unicorn: Unicorn
-    var emulationMode: EmulationMode
+    private let keystone = Keystone()
+    let unicorn: Unicorn
+    let emulationMode: EmulationMode
     
     weak var delegate: EngineDelegate?
     
-    var memory: UnsafeMutablePointer<Byte>
+    let memory: UnsafeMutablePointer<Byte>
     let memorySize = 1024 * 1024 // = 1 MB
     
     init(emulationMode: EmulationMode) {
@@ -46,9 +46,6 @@ class Engine: NSObject {
     
     func run() {
         unicorn.run()
-    }
-    
-    func reset() {
     }
     
 }

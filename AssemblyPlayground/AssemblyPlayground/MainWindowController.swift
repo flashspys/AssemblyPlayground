@@ -21,13 +21,16 @@ class MainWindowController: NSWindowController {
     var displayWindowController: DisplayWindowController?
     
     /// The holy Engine:
-    var engine = Engine(emulationMode: .x86)
+    var engine: Engine!
     
     override func windowDidLoad() {
         super.windowDidLoad()
         splitViewController.segmentedControl = segmentedControl
-        engine.delegate = self
-        
+    }
+    
+    func setupEngine(emulationMode: EmulationMode) {
+        self.engine = Engine(emulationMode: emulationMode)
+        self.engine.delegate = self
     }
     
     @IBAction func run(_ sender: NSButton) {
@@ -39,7 +42,7 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func reset(_ sender: NSButton) {
-        engine.reset()
+        setupEngine(emulationMode: engine.emulationMode)
     }
     
     @IBAction func showDisplayViewController(sender: NSButton) {
@@ -60,7 +63,6 @@ class MainWindowController: NSWindowController {
             splitViewController.setCollapsedState()
         }
     }
-    
 }
 
 extension MainWindowController: EngineDelegate {

@@ -10,7 +10,7 @@ import Cocoa
 
 class CodeEditorViewController: NSViewController {
 
-    @IBOutlet var sourceTextView: SourceTextView!
+    @IBOutlet var sourceTextView: CodeEditor!
     
     var assembly: String {
         return attributedSourceCode.string
@@ -27,8 +27,8 @@ class CodeEditorViewController: NSViewController {
         if let assembly = (NSDocumentController.shared.documents.last as? Document)?.data.assembly {
             self.setValue(NSAttributedString(string: assembly), forKey: "attributedSourceCode")
         }
-        sourceTextView.keywordColors = ["inc": NSColor.red]
-
+        //sourceTextView.keywordColors = ["inc": NSColor.red]
+        
     }
     
     override func viewWillAppear() {

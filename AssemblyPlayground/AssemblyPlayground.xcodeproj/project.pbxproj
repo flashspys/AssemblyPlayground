@@ -16,6 +16,8 @@
 		DC690FA72125B281002BB4E6 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC690FA62125B281002BB4E6 /* Document.swift */; };
 		DC690FA92125B281002BB4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC690FA82125B281002BB4E6 /* Assets.xcassets */; };
 		DC690FAC2125B281002BB4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC690FAA2125B281002BB4E6 /* Main.storyboard */; };
+		DCBE3972216E392500B3F8CD /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE3971216E392500B3F8CD /* CodeEditor.swift */; };
+		DCBE3974216E3B3D00B3F8CD /* CodeEditorRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */; };
 		DCE96E81214ED955005FCBFF /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */; };
 		DCE96E84214ED9CF005FCBFF /* MemoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */; };
 		DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97A212CB68300C871CC /* SourceTextView.m */; };
@@ -48,6 +50,8 @@
 		DC690FAB2125B281002BB4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC690FAD2125B281002BB4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssemblyPlayground.entitlements; sourceTree = "<group>"; };
+		DCBE3971216E392500B3F8CD /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
+		DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorRuler.swift; sourceTree = "<group>"; };
 		DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewDataSource.swift; sourceTree = "<group>"; };
 		DCFED977212CB67400C871CC /* Display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
@@ -115,19 +119,13 @@
 				DC690FA22125B281002BB4E6 /* AppDelegate.swift */,
 				DC690FAA2125B281002BB4E6 /* Main.storyboard */,
 				DCFED993212CBA8800C871CC /* MainWindowController.swift */,
-				DCFED99F212DEC2E00C871CC /* Engine.swift */,
 				DCFED991212CBA1200C871CC /* SplitViewController.swift */,
-				DCFED999212DE18500C871CC /* RegisterTableViewController.swift */,
 				DCFED9A1212E0CDB00C871CC /* HexExtension.swift */,
-				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
-				DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */,
-				DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */,
-				DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */,
-				DC3B5E2621432CC800447278 /* DocumentData.swift */,
-				DC690FA62125B281002BB4E6 /* Document.swift */,
-				DCFED97B212CB68300C871CC /* SourceTextView.h */,
-				DCFED97A212CB68300C871CC /* SourceTextView.m */,
-				DC55D42D216CD52F00FA29AD /* EmulationMode.swift */,
+				DCBE396F216E383D00B3F8CD /* RegisterView */,
+				DCBE396E216E383400B3F8CD /* CodeEditor */,
+				DCBE396D216E382400B3F8CD /* Memory */,
+				DCBE396C216E381800B3F8CD /* Settings */,
+				DCBE3970216E386800B3F8CD /* Documents */,
 				DC55D434216CDA9100FA29AD /* Registers */,
 				DCFED979212CB67400C871CC /* Display */,
 				DCFED985212CB68A00C871CC /* Unicorn */,
@@ -138,6 +136,53 @@
 				DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */,
 			);
 			path = AssemblyPlayground;
+			sourceTree = "<group>";
+		};
+		DCBE396C216E381800B3F8CD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DCFED98F212CB9F800C871CC /* DocumentSettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DCBE396D216E382400B3F8CD /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */,
+				DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		DCBE396E216E383400B3F8CD /* CodeEditor */ = {
+			isa = PBXGroup;
+			children = (
+				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
+				DCBE3971216E392500B3F8CD /* CodeEditor.swift */,
+				DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */,
+				DCFED97B212CB68300C871CC /* SourceTextView.h */,
+				DCFED97A212CB68300C871CC /* SourceTextView.m */,
+			);
+			path = CodeEditor;
+			sourceTree = "<group>";
+		};
+		DCBE396F216E383D00B3F8CD /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				DCFED999212DE18500C871CC /* RegisterTableViewController.swift */,
+			);
+			name = RegisterView;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		DCBE3970216E386800B3F8CD /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				DC3B5E2621432CC800447278 /* DocumentData.swift */,
+				DC690FA62125B281002BB4E6 /* Document.swift */,
+			);
+			path = Documents;
 			sourceTree = "<group>";
 		};
 		DCFED979212CB67400C871CC /* Display */ = {
@@ -164,6 +209,8 @@
 		DCFED985212CB68A00C871CC /* Unicorn */ = {
 			isa = PBXGroup;
 			children = (
+				DCFED99F212DEC2E00C871CC /* Engine.swift */,
+				DC55D42D216CD52F00FA29AD /* EmulationMode.swift */,
 				DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */,
 				DCFED983212CB68A00C871CC /* Unicorn.h */,
 				DCFED984212CB68A00C871CC /* Unicorn.m */,
@@ -257,6 +304,7 @@
 				DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */,
 				DCFED998212CC28500C871CC /* DisplayWindowController.swift in Sources */,
 				DCFED9A2212E0CDB00C871CC /* HexExtension.swift in Sources */,
+				DCBE3972216E392500B3F8CD /* CodeEditor.swift in Sources */,
 				DC55D436216CDA9A00FA29AD /* ARM64.swift in Sources */,
 				DCFED9A0212DEC2E00C871CC /* Engine.swift in Sources */,
 				DCE96E81214ED955005FCBFF /* MemoryViewController.swift in Sources */,
@@ -267,6 +315,7 @@
 				DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */,
 				DCFED992212CBA1200C871CC /* SplitViewController.swift in Sources */,
 				DCE96E84214ED9CF005FCBFF /* MemoryTableViewDataSource.swift in Sources */,
+				DCBE3974216E3B3D00B3F8CD /* CodeEditorRuler.swift in Sources */,
 				DCFED987212CB6AF00C871CC /* Display.m in Sources */,
 				DCFED990212CB9F800C871CC /* DocumentSettingsViewController.swift in Sources */,
 				DCFED98C212CB6BF00C871CC /* Keystone.m in Sources */,
