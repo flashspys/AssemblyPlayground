@@ -1,0 +1,65 @@
+mov ecx, 200
+lbl: mov BYTE PTR [ecx+255], 255
+dec ecx
+cmp ecx, 1000
+jl lbl
+
+xor rax, rax
+lbl: mov byte [eax], ah
+shl byte [eax], 0
+inc eax
+cmp eax, 25600
+jl lbl
+nop
+
+; Memory Broken Cross
+xor ecx, ecx
+xor eax, eax
+lbl: mov byte [eax], 0xaa
+add eax, 161
+inc ecx
+cmp ecx, 160
+jl lbl
+lbl2: mov byte [eax], 0xaa
+sub eax, 159
+dec ecx
+cmp ecx, 0
+jg lbl2
+nop
+
+// random
+xor ebx, ebx
+lbl: rdtsc
+mov byte [ebx], al
+inc ebx
+cmp ebx, 25600
+jl lbl
+nop
+
+// Function \o/ set up stack!
+inc rcx
+call func
+inc rdx
+hlt
+
+func:
+inc eax
+inc ebx
+ret
+
+// verlauf seitwärts
+xor rsi, rsi
+xor r11, r11
+lbl: inc rsi
+inc r11
+mov rdx, 0
+mov rax, rsi
+mov r10, 160
+div r10
+inc rdx
+neg rdx
+mov [r11], rdx
+
+cmp rsi, 25600
+jl lbl
+nop
