@@ -25,6 +25,7 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
+        self.window?.delegate = self
         splitViewController.segmentedControl = segmentedControl
     }
     
@@ -68,6 +69,13 @@ class MainWindowController: NSWindowController {
         if let splitViewController = contentViewController as? SplitViewController {
             splitViewController.setCollapsedState()
         }
+    }
+}
+
+extension MainWindowController: NSWindowDelegate {
+    func windowWillClose(_ notification: Notification) {
+        displayWindowController?.close()
+        displayWindowController = nil
     }
 }
 
