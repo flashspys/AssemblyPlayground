@@ -56,7 +56,13 @@ extension Engine: UnicornDelegate {
     }
     
     func instructionExecuted(_ address: Int64, size: Int) {
-        
+        /*
+         only for testing! Dery dirty dont do dis
+         if let displayWindowController = (NSApp.mainWindow!.windowController as! MainWindowController).displayWindowController {
+            DispatchQueue.main.async {
+                displayWindowController.display?.setNeedsDisplay(displayWindowController.display!.bounds)
+            }
+        }*/
     }
     
     func executionFinished() {

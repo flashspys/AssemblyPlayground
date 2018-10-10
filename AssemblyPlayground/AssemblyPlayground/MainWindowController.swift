@@ -43,6 +43,12 @@ class MainWindowController: NSWindowController {
     
     @IBAction func reset(_ sender: NSButton) {
         setupEngine(emulationMode: engine.emulationMode)
+        // give display the new pointer
+        if let displayVC = displayWindowController?.contentViewController as? DisplayViewController {
+            displayVC.setMemory(pointer: engine.memory)
+        }
+        // update everything
+        executionFinished()
     }
     
     @IBAction func showDisplayViewController(sender: NSButton) {
