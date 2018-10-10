@@ -35,6 +35,7 @@
 		DCFED99A212DE18500C871CC /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED999212DE18500C871CC /* RegisterTableViewController.swift */; };
 		DCFED9A0212DEC2E00C871CC /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED99F212DEC2E00C871CC /* Engine.swift */; };
 		DCFED9A2212E0CDB00C871CC /* HexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED9A1212E0CDB00C871CC /* HexExtension.swift */; };
+		DCFF8568216E810B00662D6D /* CodeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF8567216E810B00662D6D /* CodeParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		DCFED999212DE18500C871CC /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
 		DCFED99F212DEC2E00C871CC /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		DCFED9A1212E0CDB00C871CC /* HexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexExtension.swift; sourceTree = "<group>"; };
+		DCFF8567216E810B00662D6D /* CodeParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeParser.swift; sourceTree = "<group>"; };
+		DCFF8569216E932A00662D6D /* asm */ = {isa = PBXFileReference; lastKnownFileType = text; path = asm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 				DCFED985212CB68A00C871CC /* Unicorn */,
 				DCFED980212CB68900C871CC /* Keystone */,
 				DC690FA82125B281002BB4E6 /* Assets.xcassets */,
+				DCFF8569216E932A00662D6D /* asm */,
 				DC690FAD2125B281002BB4E6 /* Info.plist */,
 				DCFED986212CB69400C871CC /* AssemblyPlayground-Bridging-Header.h */,
 				DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */,
@@ -161,6 +165,7 @@
 				DCFED98D212CB9E500C871CC /* CodeEditorViewController.swift */,
 				DCBE3971216E392500B3F8CD /* CodeEditor.swift */,
 				DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */,
+				DCFF8567216E810B00662D6D /* CodeParser.swift */,
 				DCFED97B212CB68300C871CC /* SourceTextView.h */,
 				DCFED97A212CB68300C871CC /* SourceTextView.m */,
 			);
@@ -314,6 +319,7 @@
 				DC690FA72125B281002BB4E6 /* Document.swift in Sources */,
 				DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */,
 				DCFED992212CBA1200C871CC /* SplitViewController.swift in Sources */,
+				DCFF8568216E810B00662D6D /* CodeParser.swift in Sources */,
 				DCE96E84214ED9CF005FCBFF /* MemoryTableViewDataSource.swift in Sources */,
 				DCBE3974216E3B3D00B3F8CD /* CodeEditorRuler.swift in Sources */,
 				DCFED987212CB6AF00C871CC /* Display.m in Sources */,

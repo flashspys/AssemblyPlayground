@@ -9,15 +9,18 @@
 import AppKit
 
 class CodeEditor: NSTextView {
-    let dict: [Substring: NSColor] = ["inc": NSColor.red, "rax": NSColor.blue]
-
+    
+    static let width = 20
+    
+    var colorSet: [Set<String>: NSColor] = [:]
+    
     fileprivate func buildRulerView() {
         NSScrollView.rulerViewClass = CodeEditorRuler.self
         self.enclosingScrollView?.hasVerticalRuler = true
         self.enclosingScrollView?.rulersVisible = true
         
         let rulerView = self.enclosingScrollView?.verticalRulerView as? CodeEditorRuler
-        rulerView?.ruleThickness = 20
+        rulerView?.ruleThickness = CodeEditorRuler.rulerWidth
         rulerView?.clientView = self
         rulerView?.addMarker(NSRulerMarker(rulerView: rulerView!, markerLocation: 100, image: NSImage(named: "breakpoint")!, imageOrigin: NSPoint(x: 0, y: 0)))
         
@@ -48,25 +51,28 @@ extension CodeEditor: NSTextViewDelegate {
         self.setTextColor(nil, range: self.fullRange)
         
         // Characters we want to seperate
-        let charSet = CharacterSet(charactersIn: "0123456789#ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz;")
         
-        // Get the chunks seperated by the above set
-        let chunks = code.split(maxSplits: Int.max, omittingEmptySubsequences: true) { (char) -> Bool in
-            if let unicodeScalar = char.unicodeScalars.first {
-                return charSet.inverted.contains(unicodeScalar)
+        let results = CodeParser.parse(code: code)
+        for result in results {
+            var color: NSColor?
+            switch result {
+            case .code(let substring):
+                for (set, highlightColor) in colorSet {
+                    let string = String(substring)
+                    if set.contains(string.uppercased()) {
+                        color = highlightColor
+                    } else {
+                        if string.range(of: "^(?>(?>(?>0x|0X)[\\da-fA-F]+)|\\d+)$", options: .regularExpression, range: nil, locale: nil) != nil {
+                            color = NSColor.blue
+                        }
+                    }
+                }
+            case .comment:
+                color = NSColor.gray
             }
-            return false
+            self.setTextColor(color, range: result.range(in: code))
         }
         
-        // Check highlighting for each substring
-        for substring in chunks {
-            if let color = dict[substring] {
-                let location = code.distance(from: code.startIndex, to: substring.startIndex)
-                let length = code.distance(from: substring.startIndex, to: substring.endIndex)
-                
-                self.setTextColor(color, range: NSRange(location: location, length: length))
-            }
-        }
     }
     
 }

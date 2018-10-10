@@ -10,6 +10,8 @@ import Foundation
 
 class CodeEditorRuler: NSRulerView {
     
+    static let rulerWidth: CGFloat = 20
+    
     var selectedLine: ((Int) -> Void)?
     
     var lineHeight: CGFloat {
@@ -38,8 +40,12 @@ class CodeEditorRuler: NSRulerView {
 
         // Draw the line numbers
         for i in 0...numberOfLinesInRect {
-            let point = CGPoint(x: 0, y: ((dirtyRect.origin.y / lineHeight) + CGFloat(i)) * lineHeight - offset)
+            
             let string: NSString = "\(start+i)" as NSString
+            let width = string.size(withAttributes: nil).width
+            let point = CGPoint(x: -width + CodeEditorRuler.rulerWidth,
+                                y: ((dirtyRect.origin.y / lineHeight) + CGFloat(i)) * lineHeight - offset)
+            
             string.draw(at: point, withAttributes: nil)
         }
     }

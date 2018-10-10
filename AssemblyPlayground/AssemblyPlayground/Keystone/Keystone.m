@@ -24,6 +24,10 @@
     char* code = calloc(string.length + 1, sizeof(char));
     
     const char* localcode = [string cStringUsingEncoding:NSASCIIStringEncoding];
+    if (localcode == NULL) {
+        NSLog(@"the receiver cannot be losslessly converted to encoding.");
+        return NULL;
+    }
     strcpy(code, localcode);
     switch (emulationMode) {
         case 0: // x86
