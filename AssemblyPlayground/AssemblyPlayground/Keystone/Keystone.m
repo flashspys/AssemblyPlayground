@@ -26,6 +26,7 @@
     const char* localcode = [string cStringUsingEncoding:NSASCIIStringEncoding];
     if (localcode == NULL) {
         NSLog(@"the receiver cannot be losslessly converted to encoding.");
+        free(code);
         return NULL;
     }
     strcpy(code, localcode);
@@ -37,12 +38,14 @@
             err = ks_open(KS_ARCH_ARM64, KS_MODE_LITTLE_ENDIAN, &ks);
             break;
         default:
+            free(code);
             printf("ERROR: Unexpected emulationMode");
             return NULL;
 
     }
     if (err != KS_ERR_OK) {
         printf("ERROR: failed on ks_open() = %d\n", err);
+        free(code);
         return NULL;
     }
     
@@ -61,6 +64,7 @@
     
     if (result != KS_ERR_OK) {
         printf("Error #%i parsing: %s =>  %s\n",ks_errno(ks), code, ks_strerror(ks_errno(ks)));
+        free(assembly);
         free(code);
         return NULL;
     } else {
