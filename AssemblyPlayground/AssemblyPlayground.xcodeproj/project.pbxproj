@@ -20,7 +20,6 @@
 		DCBE3974216E3B3D00B3F8CD /* CodeEditorRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */; };
 		DCE96E81214ED955005FCBFF /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */; };
 		DCE96E84214ED9CF005FCBFF /* MemoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */; };
-		DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED97A212CB68300C871CC /* SourceTextView.m */; };
 		DCFED987212CB6AF00C871CC /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED978212CB67400C871CC /* Display.m */; };
 		DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */; };
 		DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED984212CB68A00C871CC /* Unicorn.m */; };
@@ -105,6 +104,7 @@
 			children = (
 				DC690FA12125B281002BB4E6 /* AssemblyPlayground */,
 				DC690FA02125B281002BB4E6 /* Products */,
+				DC6978662174B42100712033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +140,13 @@
 				DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */,
 			);
 			path = AssemblyPlayground;
+			sourceTree = "<group>";
+		};
+		DC6978662174B42100712033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DCBE396C216E381800B3F8CD /* Settings */ = {
@@ -301,7 +308,6 @@
 				DCFED98B212CB6BD00C871CC /* Keystone+Swift.swift in Sources */,
 				DC55D431216CDA6600FA29AD /* Registers.swift in Sources */,
 				DC55D433216CDA8B00FA29AD /* X86.swift in Sources */,
-				DCFED97C212CB68300C871CC /* SourceTextView.m in Sources */,
 				DCFED98E212CB9E500C871CC /* CodeEditorViewController.swift in Sources */,
 				DC55D42E216CD52F00FA29AD /* EmulationMode.swift in Sources */,
 				DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */,
@@ -471,15 +477,17 @@
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
-					"-lunicorn",
 					"-lkeystone",
+					"-lunicorn",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AssemblyPlayground/AssemblyPlayground-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -497,15 +505,17 @@
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
-					"-lunicorn",
 					"-lkeystone",
+					"-lunicorn",
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AssemblyPlayground/AssemblyPlayground-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};

@@ -49,7 +49,7 @@ static const size_t bufferLength = layerWidth * layerHeight * kComponentsPerPixe
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
     /*CGRect rect = CGRectMake(0, 0, 16, 16);
     
     CGContextDrawImage(context, rect, )
