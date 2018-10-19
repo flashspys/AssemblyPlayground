@@ -32,6 +32,8 @@ class MainWindowController: NSWindowController {
     func setupEngine(emulationMode: EmulationMode) {
         self.engine = Engine(emulationMode: emulationMode)
         self.engine.delegate = self
+        
+        executionFinished()
     }
     
     @IBAction func run(_ sender: NSButton) {

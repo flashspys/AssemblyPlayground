@@ -13,6 +13,8 @@
     ks_engine* ks;
 }
 
+@synthesize metaData;
+
 -(nullable uint8_t*)assemble: (NSString*) string
                         size: (size_t*) size
                emulationMode: (int) emulationMode {
@@ -21,6 +23,8 @@
     int* infoArray;
     size_t infoSize;
     
+    NSMutableArray* mutableMetaData = [NSMutableArray array];
+    metaData = mutableMetaData;
     char* code = calloc(string.length + 1, sizeof(char));
     
     const char* localcode = [string cStringUsingEncoding:NSASCIIStringEncoding];
@@ -57,13 +61,24 @@
     uint8_t* assembly = malloc(*size);
     memcpy(assembly, encode, *size);
     
-    for (int i = 0; i < infoSize; i++) {
+    int lastAssemblyPosition = 0;
+    int lastOpcodePosition = 0;
+    for (int i = 0; i < infoSize; i+=2) {
         NSLog(@"infoArray[%d] = %d", i, infoArray[i]);
+        NSLog(@"infoArray[%d] = %d", i+1, infoArray[i+1]);
+
+        NSArray<NSNumber*>* assemblyMetaData = @[@(lastAssemblyPosition), @(infoArray[i])];
+        NSArray<NSNumber*>* opcodeMetaData = @[@(lastOpcodePosition), @(infoArray[i+1])];
+        
+        lastAssemblyPosition = infoArray[i];
+        lastOpcodePosition = infoArray[i+1];
+        
+        [mutableMetaData addObject:@[assemblyMetaData, opcodeMetaData]];
     }
     ks_free((unsigned char *)infoArray);
     
     if (result != KS_ERR_OK) {
-        printf("Error #%i parsing: %s =>  %s\n",ks_errno(ks), code, ks_strerror(ks_errno(ks)));
+        printf("Error #%i parsing: %s =>  %s\n", ks_errno(ks), code, ks_strerror(ks_errno(ks)));
         free(assembly);
         free(code);
         return NULL;

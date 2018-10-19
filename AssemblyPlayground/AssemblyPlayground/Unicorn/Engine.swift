@@ -19,6 +19,8 @@ class Engine: NSObject {
     }
     
     private let keystone = Keystone()
+    var currentMetaData: [(Substring, ArraySlice<UInt8>)]?
+    
     let unicorn: Unicorn
     let emulationMode: EmulationMode
     
@@ -37,8 +39,9 @@ class Engine: NSObject {
     }
     
     func prepareCode(_ sourceCode: String) -> Bool {
-        if let opcode = keystone.assemble(string: sourceCode, emulationMode: emulationMode) {
-            return unicorn.writeCode(code: opcode)
+        if let assembleResult = keystone.assemble(string: sourceCode, emulationMode: emulationMode) {
+            self.currentMetaData = assembleResult.meta
+            return unicorn.writeCode(code: assembleResult.opcode)
         } else {
             return false
         }
