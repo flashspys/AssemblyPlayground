@@ -12,7 +12,8 @@ extension Registers {
     
     enum X86: Int32, InspectableRegister {
         static func inspectable() -> [InspectableRegister] {
-            return [X86.RAX, X86.RBX, X86.RCX, X86.RDX]
+            return [X86.RAX, X86.RBX, X86.RCX, X86.RDX, X86.RSI, X86.RDI, X86.RBP, X86.RSP,
+                    X86.RIP, X86.R8, X86.R9, X86.R10, X86.R11, X86.R12, X86.R13, X86.R14, X86.R15]
         }
         
         func value(with engine: Engine) -> UInt64 {
@@ -29,8 +30,35 @@ extension Registers {
                 return "RCX"
             case .RDX:
                 return "RDX"
+            case .RSI:
+                return "RSI"
+            case .RDI:
+                return "RDI"
+            case .RBP:
+                return "RBP"
+            case .RSP:
+                return "RSP"
+            case .RIP:
+                return "RIP"
+            case .R8:
+                return "R8"
+            case .R9:
+                return "R9"
+            case .R10:
+                return "R10"
+            case .R11:
+                return "R11"
+            case .R12:
+                return "R12"
+            case .R13:
+                return "R13"
+            case .R14:
+                return "R14"
+            case .R15:
+                return "R15"
             default:
                 return "N/A"
+                
             }
         }
         
