@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol EngineDelegate: class {
     func executionFinished()
+    func compilerError(error: KeystoneError)
 }
 
 class Engine: NSObject {
@@ -38,17 +40,18 @@ class Engine: NSObject {
         unicorn.createMemory(withPointer: memory, size: memorySize)
     }
     
-    func prepareCode(_ sourceCode: String) -> Bool {
-        if let assembleResult = keystone.assemble(string: sourceCode, emulationMode: emulationMode) {
-            self.currentMetaData = assembleResult.meta
-            return unicorn.writeCode(code: assembleResult.opcode)
-        } else {
-            return false
+    func run(_ sourceCode: String) {
+        keystone.assemble(string: sourceCode, emulationMode: emulationMode).done
+        { (opcode: [UInt8], meta: [(Substring, ArraySlice<UInt8>)]) in
+            self.currentMetaData = meta
+            if self.unicorn.writeCode(code: opcode) {
+                self.unicorn.run()
+            }
+        }.catch { (error) in
+            if let keystoneError = error as? KeystoneError {
+                self.delegate?.compilerError(error: keystoneError)
+            }
         }
-    }
-    
-    func run() {
-        unicorn.run()
     }
     
 }

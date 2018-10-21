@@ -13,7 +13,7 @@
     ks_engine* ks;
 }
 
-@synthesize metaData;
+@synthesize metaData, lastErrorNumber;
 
 -(nullable uint8_t*)assemble: (NSString*) string
                         size: (size_t*) size
@@ -78,6 +78,7 @@
     ks_free((unsigned char *)infoArray);
     
     if (result != KS_ERR_OK) {
+        lastErrorNumber = @(ks_errno(ks));
         printf("Error #%i parsing: %s =>  %s\n", ks_errno(ks), code, ks_strerror(ks_errno(ks)));
         free(assembly);
         free(code);

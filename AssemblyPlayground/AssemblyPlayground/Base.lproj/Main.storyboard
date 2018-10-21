@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14215.3"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -459,8 +458,10 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="8B2541CB-AB82-45DB-A0BF-9B0473598523" label="Rst" paletteLabel="Rst" sizingBehavior="auto" id="5mN-KJ-Y0Q">
+                                <toolbarItem implicitItemIdentifier="8B2541CB-AB82-45DB-A0BF-9B0473598523" label="Reset" paletteLabel="Reset" id="5mN-KJ-Y0Q">
                                     <nil key="toolTip"/>
+                                    <size key="minSize" width="50" height="26"/>
+                                    <size key="maxSize" width="50" height="26"/>
                                     <button key="view" verticalHuggingPriority="750" id="Qgi-r4-y2U">
                                         <rect key="frame" x="0.0" y="14" width="50" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -487,7 +488,7 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="9EA22D9A-E6B3-44A5-BFC4-9FA09D316205" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="IOg-gw-POg">
+                                <toolbarItem implicitItemIdentifier="9EA22D9A-E6B3-44A5-BFC4-9FA09D316205" label="Settings Panels" paletteLabel="Settings Panels" sizingBehavior="auto" id="IOg-gw-POg">
                                     <nil key="toolTip"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="gcO-Zq-iZX">
                                         <rect key="frame" x="0.0" y="14" width="104" height="24"/>
@@ -818,16 +819,20 @@
                                                             <rect key="frame" x="1" y="1" width="54" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-QU-qlj">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-QU-qlj">
                                                                     <rect key="frame" x="0.0" y="0.0" width="54" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="678" id="3bl-tg-xgC">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="678" id="3bl-tg-xgC">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="tyc-QU-qlj" firstAttribute="leading" secondItem="Y5T-Iy-fB2" secondAttribute="leading" constant="2" id="98E-kd-6Gd"/>
+                                                                <constraint firstItem="tyc-QU-qlj" firstAttribute="centerY" secondItem="Y5T-Iy-fB2" secondAttribute="centerY" id="J8u-Yh-4Rk"/>
+                                                                <constraint firstItem="tyc-QU-qlj" firstAttribute="centerX" secondItem="Y5T-Iy-fB2" secondAttribute="centerX" id="PNZ-B6-Xab"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="tyc-QU-qlj" id="sa8-zN-ptl"/>
                                                             </connections>
@@ -840,7 +845,7 @@
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="lEb-Ek-ZmD">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" title="Text Cell" id="lEb-Ek-ZmD">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -851,9 +856,8 @@
                                                             <rect key="frame" x="58" y="1" width="174" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOW-JK-QYC">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QOW-JK-QYC">
                                                                     <rect key="frame" x="0.0" y="0.0" width="174" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="AB DE 8B C5 D6 AA 09 00" id="2D7-66-boz">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -861,6 +865,11 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="QOW-JK-QYC" firstAttribute="leading" secondItem="aC4-eq-usN" secondAttribute="leading" constant="2" id="1gL-p0-tY7"/>
+                                                                <constraint firstItem="QOW-JK-QYC" firstAttribute="centerY" secondItem="aC4-eq-usN" secondAttribute="centerY" id="s9X-n2-c4G"/>
+                                                                <constraint firstItem="QOW-JK-QYC" firstAttribute="centerX" secondItem="aC4-eq-usN" secondAttribute="centerX" id="xo9-Ml-VTr"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="QOW-JK-QYC" id="gBT-OT-uo8"/>
                                                             </connections>

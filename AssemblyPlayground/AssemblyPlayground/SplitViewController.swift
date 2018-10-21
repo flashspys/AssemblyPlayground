@@ -17,6 +17,23 @@ class SplitViewController: NSSplitViewController {
     @IBOutlet weak var memoryItem: NSSplitViewItem!
     @IBOutlet weak var settingsItem: NSSplitViewItem!
     
+    var codeViewController: CodeEditorViewController? {
+        return codeItem.viewController as? CodeEditorViewController
+    }
+    
+    var registerViewController: RegisterTableViewController? {
+        return registerItem.viewController as? RegisterTableViewController
+    }
+    
+    var memoryViewController: MemoryViewController? {
+        return memoryItem.viewController as? MemoryViewController
+    }
+    
+    var settingsViewController: DocumentSettingsViewController? {
+        return settingsItem.viewController as? DocumentSettingsViewController
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

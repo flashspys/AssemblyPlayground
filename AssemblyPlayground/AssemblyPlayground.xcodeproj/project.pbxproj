@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CCFAA34C5C916BA46E35ACF /* Pods_AssemblyPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52ACB61F9BD5BE8DAD7D711D /* Pods_AssemblyPlayground.framework */; };
 		DC3B5E2721432CC800447278 /* DocumentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B5E2621432CC800447278 /* DocumentData.swift */; };
 		DC55D42E216CD52F00FA29AD /* EmulationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55D42D216CD52F00FA29AD /* EmulationMode.swift */; };
 		DC55D431216CDA6600FA29AD /* Registers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55D430216CDA6600FA29AD /* Registers.swift */; };
@@ -20,6 +21,8 @@
 		DCBE3974216E3B3D00B3F8CD /* CodeEditorRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */; };
 		DCE96E81214ED955005FCBFF /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */; };
 		DCE96E84214ED9CF005FCBFF /* MemoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */; };
+		DCFE963D217CB42F000B2B7D /* KeystoneError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE963C217CB42F000B2B7D /* KeystoneError.swift */; };
+		DCFE9640217CC615000B2B7D /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFE963F217CC615000B2B7D /* String+Range.swift */; };
 		DCFED987212CB6AF00C871CC /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED978212CB67400C871CC /* Display.m */; };
 		DCFED989212CB6B700C871CC /* Unicorn+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFED982212CB68A00C871CC /* Unicorn+Swift.swift */; };
 		DCFED98A212CB6B900C871CC /* Unicorn.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFED984212CB68A00C871CC /* Unicorn.m */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27ECDC4E5FE7FCD65F2A4679 /* Pods-AssemblyPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssemblyPlayground.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AssemblyPlayground/Pods-AssemblyPlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		52ACB61F9BD5BE8DAD7D711D /* Pods_AssemblyPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssemblyPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0E90A52B140EBB35027630 /* Pods-AssemblyPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssemblyPlayground.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AssemblyPlayground/Pods-AssemblyPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		DC3B5E2621432CC800447278 /* DocumentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentData.swift; sourceTree = "<group>"; };
 		DC55D42D216CD52F00FA29AD /* EmulationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulationMode.swift; sourceTree = "<group>"; };
 		DC55D430216CDA6600FA29AD /* Registers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registers.swift; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorRuler.swift; sourceTree = "<group>"; };
 		DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		DCE96E83214ED9CF005FCBFF /* MemoryTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewDataSource.swift; sourceTree = "<group>"; };
+		DCFE963C217CB42F000B2B7D /* KeystoneError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoneError.swift; sourceTree = "<group>"; };
+		DCFE963F217CC615000B2B7D /* String+Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
 		DCFED977212CB67400C871CC /* Display.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		DCFED978212CB67400C871CC /* Display.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		DCFED97A212CB68300C871CC /* SourceTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceTextView.m; sourceTree = "<group>"; };
@@ -83,12 +91,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CCFAA34C5C916BA46E35ACF /* Pods_AssemblyPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42017267A1C5FC27785F55EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27ECDC4E5FE7FCD65F2A4679 /* Pods-AssemblyPlayground.debug.xcconfig */,
+				CD0E90A52B140EBB35027630 /* Pods-AssemblyPlayground.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DC55D434216CDA9100FA29AD /* Registers */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +123,7 @@
 				DC690FA12125B281002BB4E6 /* AssemblyPlayground */,
 				DC690FA02125B281002BB4E6 /* Products */,
 				DC6978662174B42100712033 /* Frameworks */,
+				42017267A1C5FC27785F55EB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +152,7 @@
 				DCFED979212CB67400C871CC /* Display */,
 				DCFED985212CB68A00C871CC /* Unicorn */,
 				DCFED980212CB68900C871CC /* Keystone */,
+				DCFE963E217CC607000B2B7D /* Extensions */,
 				DC690FA82125B281002BB4E6 /* Assets.xcassets */,
 				DCFF8569216E932A00662D6D /* asm */,
 				DC690FAD2125B281002BB4E6 /* Info.plist */,
@@ -145,6 +165,7 @@
 		DC6978662174B42100712033 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52ACB61F9BD5BE8DAD7D711D /* Pods_AssemblyPlayground.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,6 +218,14 @@
 			path = Documents;
 			sourceTree = "<group>";
 		};
+		DCFE963E217CC607000B2B7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCFE963F217CC615000B2B7D /* String+Range.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DCFED979212CB67400C871CC /* Display */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +243,7 @@
 				DCFED97D212CB68900C871CC /* Keystone+Swift.swift */,
 				DCFED97E212CB68900C871CC /* Keystone.h */,
 				DCFED97F212CB68900C871CC /* Keystone.m */,
+				DCFE963C217CB42F000B2B7D /* KeystoneError.swift */,
 			);
 			path = Keystone;
 			sourceTree = "<group>";
@@ -237,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC690FB12125B281002BB4E6 /* Build configuration list for PBXNativeTarget "AssemblyPlayground" */;
 			buildPhases = (
+				F1AAA3230B0F16E565AD8BAD /* [CP] Check Pods Manifest.lock */,
 				DC690F9B2125B281002BB4E6 /* Sources */,
 				DC690F9C2125B281002BB4E6 /* Frameworks */,
 				DC690F9D2125B281002BB4E6 /* Resources */,
+				C8AE25D864961E9708F7FA1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,11 +332,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C8AE25D864961E9708F7FA1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-AssemblyPlayground/Pods-AssemblyPlayground-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-AssemblyPlayground/Pods-AssemblyPlayground-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1AAA3230B0F16E565AD8BAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AssemblyPlayground-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DC690F9B2125B281002BB4E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFE9640217CC615000B2B7D /* String+Range.swift in Sources */,
 				DCFED98B212CB6BD00C871CC /* Keystone+Swift.swift in Sources */,
 				DC55D431216CDA6600FA29AD /* Registers.swift in Sources */,
 				DC55D433216CDA8B00FA29AD /* X86.swift in Sources */,
@@ -323,6 +403,7 @@
 				DCFED99A212DE18500C871CC /* RegisterTableViewController.swift in Sources */,
 				DCFED994212CBA8800C871CC /* MainWindowController.swift in Sources */,
 				DC690FA72125B281002BB4E6 /* Document.swift in Sources */,
+				DCFE963D217CB42F000B2B7D /* KeystoneError.swift in Sources */,
 				DCFED996212CBE3C00C871CC /* DisplayViewController.swift in Sources */,
 				DCFED992212CBA1200C871CC /* SplitViewController.swift in Sources */,
 				DCFF8568216E810B00662D6D /* CodeParser.swift in Sources */,
@@ -465,11 +546,14 @@
 		};
 		DC690FB22125B281002BB4E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27ECDC4E5FE7FCD65F2A4679 /* Pods-AssemblyPlayground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZXT6586FS8;
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				EXPANDED_CODE_SIGN_IDENTITY_NAME = "-";
 				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = AssemblyPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -479,6 +563,7 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-lkeystone",
 					"-lunicorn",
 					"-lc++",
@@ -493,11 +578,14 @@
 		};
 		DC690FB32125B281002BB4E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0E90A52B140EBB35027630 /* Pods-AssemblyPlayground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = ZXT6586FS8;
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				EXPANDED_CODE_SIGN_IDENTITY_NAME = "-";
 				HEADER_SEARCH_PATHS = /usr/local/include/;
 				INFOPLIST_FILE = AssemblyPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -507,6 +595,7 @@
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-lkeystone",
 					"-lunicorn",
 					"-lc++",

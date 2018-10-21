@@ -13,6 +13,11 @@ class CodeEditor: NSTextView {
     static let width = 20
     
     var colorSet: [Set<String>: NSColor] = [:]
+    var numberColor: NSColor = .blue
+    
+    var fullRange: NSRange {
+        return NSRange(location: 0, length: self.string.count)
+    }
     
     fileprivate func buildRulerView() {
         NSScrollView.rulerViewClass = CodeEditorRuler.self
@@ -22,7 +27,7 @@ class CodeEditor: NSTextView {
         let rulerView = self.enclosingScrollView?.verticalRulerView as? CodeEditorRuler
         rulerView?.ruleThickness = CodeEditorRuler.rulerWidth
         rulerView?.clientView = self
-        rulerView?.addMarker(NSRulerMarker(rulerView: rulerView!, markerLocation: 100, image: NSImage(named: "breakpoint")!, imageOrigin: NSPoint(x: 0, y: 0)))
+        //rulerView?.addMarker(NSRulerMarker(rulerView: rulerView!, markerLocation: 100, image: NSImage(named: "breakpoint")!, imageOrigin: NSPoint(x: 0, y: 0)))
         
         self.enclosingScrollView?.hasHorizontalScroller = true
         self.textContainer?.widthTracksTextView = false
@@ -36,14 +41,17 @@ class CodeEditor: NSTextView {
         self.delegate = self
     }
     
+    func highlight(range: NSRange, color: NSColor) {
+        self.textStorage?.addAttribute(.backgroundColor, value: color, range: range)
+    }
+    
+    func removeAllHighlights() {
+        self.textStorage?.removeAttribute(.backgroundColor, range: fullRange)
+    }
+    
 }
 
 extension CodeEditor: NSTextViewDelegate {
-    
-    var fullRange: NSRange {
-        return NSRange(location: 0, length: self.string.count)
-    }
-    
     
     func textDidChange(_ notification: Notification) {
         // Get the code and reset the textcolor
@@ -63,7 +71,7 @@ extension CodeEditor: NSTextViewDelegate {
                         color = highlightColor
                     } else {
                         if string.range(of: "^(?>(?>(?>0x|0X)[\\da-fA-F]+)|\\d+)$", options: .regularExpression, range: nil, locale: nil) != nil {
-                            color = NSColor.blue
+                            color = numberColor
                         }
                     }
                 }

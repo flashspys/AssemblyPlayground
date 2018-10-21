@@ -48,18 +48,20 @@ inc ebx
 ret
 
 // verlauf seitwärts
+; clear registers
 xor rsi, rsi
 xor r11, r11
-lbl: inc rsi
-inc r11
+
+lbl:
 mov rdx, 0
 mov rax, rsi
-mov r10, 160
-div r10
+mov r10, 160 ; 160 = width of display
+div r10; rax / r10 = rax ; rax % r10 = rdx
 inc rdx
-neg rdx
 mov [r11], rdx
+inc rsi
+inc r11
 
-cmp rsi, 25600
+cmp rsi, 0x6400
 jl lbl
 nop

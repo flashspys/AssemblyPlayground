@@ -37,8 +37,20 @@ class CodeEditorViewController: NSViewController {
         let registerSet = Set(registers)
         let keywordSet = Set(keywords)
         
-        sourceTextView.colorSet = [keywordSet: NSColor.red, registerSet: NSColor.green]
-        
+        sourceTextView.colorSet = [keywordSet: #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1), registerSet: #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)]
+        sourceTextView.numberColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+    }
+    
+    func displayError(error: KeystoneError) {
+        switch error {
+        case .compilerError(_, let substring):
+            let location = self.assembly.distance(from: self.assembly.startIndex, to: substring.startIndex)
+            self.sourceTextView.highlight(range: NSRange(location: location, length: substring.count),
+                                          color: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 0.3995928697))
+        case .unknown:
+            self.presentError(error)
+            break
+        }
     }
     
 }

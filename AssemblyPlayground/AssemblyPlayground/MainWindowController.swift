@@ -38,10 +38,8 @@ class MainWindowController: NSWindowController {
     
     @IBAction func run(_ sender: NSButton) {
         guard let codeVC = splitViewController.codeItem.viewController as? CodeEditorViewController else { return }
-        
-        if engine.prepareCode(codeVC.assembly) {
-            engine.run()
-        }
+        codeVC.sourceTextView.removeAllHighlights()
+        engine.run(codeVC.assembly)
     }
     
     @IBAction func reset(_ sender: NSButton) {
@@ -89,8 +87,12 @@ extension MainWindowController: EngineDelegate {
                 displayWindowController.display?.setNeedsDisplay(displayWindowController.display!.bounds)
             }
         }
-        (self.splitViewController.registerItem.viewController as? RegisterTableViewController)?.updateRegisters()
-        (self.splitViewController.memoryItem.viewController as? MemoryViewController)?.updateMemory()
+        self.splitViewController.registerViewController?.updateRegisters()
+        self.splitViewController.memoryViewController?.updateMemory()
+    }
+    
+    func compilerError(error: KeystoneError) {
+        self.splitViewController.codeViewController?.displayError(error: error)
     }
     
 }

@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// three dimensional metadata array
 /// contains a mapping between assembly and opcode
 @property NSArray<NSArray<NSArray<NSNumber*>*>*>* metaData;
-
+@property (copy, nullable) NSNumber* lastErrorNumber;
+    
 -(nullable uint8_t*)assemble: (NSString*) string
                         size: (size_t*) size
                emulationMode: (int) emulationMode;
