@@ -70,7 +70,10 @@ extension CodeEditor: NSTextViewDelegate {
                     if set.contains(string.uppercased()) {
                         color = highlightColor
                     } else {
-                        if string.range(of: "^(?>(?>(?>0x|0X)[\\da-fA-F]+)|\\d+)$", options: .regularExpression, range: nil, locale: nil) != nil {
+                        if string.range(of: "^(?>(?>(?>0x|0X)[\\da-fA-F]+)|\\d+)$",
+                                        options: .regularExpression,
+                                        range: nil,
+                                        locale: nil) != nil {
                             color = numberColor
                         }
                     }

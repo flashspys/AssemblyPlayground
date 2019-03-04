@@ -14,8 +14,8 @@ enum ParserResult {
     func range(in code: String) -> NSRange {
         switch self {
         case .code(let substring), .comment(let substring):
-            let location = code.distance(from: code.startIndex, to: substring.startIndex)
-            let length = code.distance(from: substring.startIndex, to: substring.endIndex)
+            let location = substring.startIndex.encodedOffset
+            let length = substring.endIndex.encodedOffset - substring.startIndex.encodedOffset
             return NSRange(location: location, length: length)
         }
 
@@ -69,10 +69,10 @@ class CodeParser {
             case .whitespace, .code:
                 if commentSet.contains(scalar) {
                     newState = .comment(startIndex: currentIndex)
-                } else if charSet.inverted.contains(scalar) {
-                    newState = .whitespace
                 } else if charSet.contains(scalar) {
                     newState = .code(startIndex: currentIndex)
+                } else {
+                    newState = .whitespace
                 }
             case .comment:
                 if scalar == "\n" {
