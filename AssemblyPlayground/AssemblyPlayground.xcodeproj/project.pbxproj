@@ -56,6 +56,7 @@
 		DC690FAB2125B281002BB4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC690FAD2125B281002BB4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC690FAE2125B281002BB4E6 /* AssemblyPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssemblyPlayground.entitlements; sourceTree = "<group>"; };
+		DCA215C222554CFC009BDB21 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DCBE3971216E392500B3F8CD /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		DCBE3973216E3B3D00B3F8CD /* CodeEditorRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorRuler.swift; sourceTree = "<group>"; };
 		DCE96E7F214ED955005FCBFF /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		DC690F962125B281002BB4E6 = {
 			isa = PBXGroup;
 			children = (
+				DCA215C222554CFC009BDB21 /* README.md */,
 				DC690FA12125B281002BB4E6 /* AssemblyPlayground */,
 				DC690FA02125B281002BB4E6 /* Products */,
 				DC6978662174B42100712033 /* Frameworks */,
@@ -294,6 +296,7 @@
 				TargetAttributes = {
 					DC690F9E2125B281002BB4E6 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -571,7 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AssemblyPlayground/AssemblyPlayground-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
@@ -603,7 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.wehnert.felix.AssemblyPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AssemblyPlayground/AssemblyPlayground-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = x86_64;
 			};
 			name = Release;

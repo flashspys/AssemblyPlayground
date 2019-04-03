@@ -13,9 +13,9 @@ enum ParserResult {
     
     func range(in code: String) -> NSRange {
         switch self {
-        case .code(let substring), .comment(let substring):
-            let location = substring.startIndex.encodedOffset
-            let length = substring.endIndex.encodedOffset - substring.startIndex.encodedOffset
+        case .code(let substring), .comment(let substring):            
+            let location = substring.startIndex.utf16Offset(in: code)
+            let length = substring.endIndex.utf16Offset(in: code) - substring.startIndex.utf16Offset(in: code)
             return NSRange(location: location, length: length)
         }
 
